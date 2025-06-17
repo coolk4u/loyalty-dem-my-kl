@@ -9,7 +9,7 @@ import {
   Users, 
   Heart, 
   Gift, 
-  DollarSign, 
+  IndianRupee, 
   Star, 
   Eye,
   MessageCircle,
@@ -28,7 +28,7 @@ const InfluencerDashboard = () => {
             <Crown className="w-6 h-6 text-white" />
           </div>
           <div>
-            <h1 className="text-xl font-bold">Sarah Chen</h1>
+            <h1 className="text-xl font-bold">Pavan</h1>
             <p className="text-loyalty-silver text-sm">Gold Influencer</p>
           </div>
         </div>
@@ -49,13 +49,13 @@ const InfluencerDashboard = () => {
             <div className="flex items-center justify-between">
               <div>
                 <p className="text-loyalty-silver text-sm">Total Earnings</p>
-                <p className="text-2xl font-bold text-loyalty-gold">$24,567</p>
+                <p className="text-2xl font-bold text-loyalty-gold">₹18,42,567</p>
                 <div className="flex items-center mt-1">
                   <TrendingUp className="w-4 h-4 text-green-400 mr-1" />
                   <span className="text-green-400 text-xs">+15.3%</span>
                 </div>
               </div>
-              <DollarSign className="w-8 h-8 text-loyalty-gold" />
+              <IndianRupee className="w-8 h-8 text-loyalty-gold" />
             </div>
           </Card>
 
@@ -144,11 +144,11 @@ const InfluencerDashboard = () => {
           <Card className="bg-glass-gradient border-white/10 backdrop-blur-lg p-4">
             <div className="flex items-center space-x-3">
               <div className="w-10 h-10 rounded-full bg-green-500/20 flex items-center justify-center">
-                <DollarSign className="w-5 h-5 text-green-400" />
+                <IndianRupee className="w-5 h-5 text-green-400" />
               </div>
               <div className="flex-1">
                 <p className="text-white font-medium">Reward Claimed</p>
-                <p className="text-loyalty-silver text-sm">$150 cashback from Nike campaign</p>
+                <p className="text-loyalty-silver text-sm">₹11,250 cashback from Nike campaign</p>
               </div>
               <span className="text-loyalty-silver text-xs">2h ago</span>
             </div>
