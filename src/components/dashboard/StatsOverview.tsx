@@ -44,7 +44,7 @@ const StatsOverview = () => {
         </Card>
 
         <Card className="bg-card-gradient border-white/10 backdrop-blur-lg p-3 text-center animate-slide-up">
-          <FileText className="w-6 h-6 text-blue-400 mx-auto mb-2" />
+          <FileText className="w-6 h-6 text-orange-400 mx-auto mb-2" />
           <p className="text-sm text-loyalty-silver">Surveys</p>
           <p className="font-bold text-white">23</p>
         </Card>

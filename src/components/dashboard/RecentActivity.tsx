@@ -23,8 +23,8 @@ const RecentActivity = () => {
 
         <Card className="bg-glass-gradient border-white/10 backdrop-blur-lg p-4">
           <div className="flex items-center space-x-3">
-            <div className="w-10 h-10 rounded-full bg-blue-500/20 flex items-center justify-center">
-              <FileText className="w-5 h-5 text-blue-400" />
+            <div className="w-10 h-10 rounded-full bg-orange-500/20 flex items-center justify-center">
+              <FileText className="w-5 h-5 text-orange-400" />
             </div>
             <div className="flex-1">
               <p className="text-white font-medium">Survey Completed</p>
@@ -36,8 +36,8 @@ const RecentActivity = () => {
 
         <Card className="bg-glass-gradient border-white/10 backdrop-blur-lg p-4">
           <div className="flex items-center space-x-3">
-            <div className="w-10 h-10 rounded-full bg-purple-500/20 flex items-center justify-center">
-              <QrCode className="w-5 h-5 text-purple-400" />
+            <div className="w-10 h-10 rounded-full bg-loyalty-accent/20 flex items-center justify-center">
+              <QrCode className="w-5 h-5 text-loyalty-accent" />
             </div>
             <div className="flex-1">
               <p className="text-white font-medium">QR Code Scanned</p>
