@@ -25,7 +25,7 @@ const Survey = () => {
         "Floor tiles in bathroom",
         "Wall tiles in kitchen",
         "Outdoor patio/terrace",
-        "Swimming pool area"
+        "Swimming pool's area"
       ]
     },
     {
