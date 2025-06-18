@@ -13,20 +13,20 @@ const DashboardHeader = () => {
 
   return (
     <div className="relative">
-      {/* MYK Laticrete Branding */}
-      <div className="text-center py-4 border-b border-white/10">
-        <h1 className="text-2xl font-bold text-white tracking-wide">MYK LATICRETE</h1>
-        <p className="text-loyalty-silver text-xs">Premium Construction Solutions</p>
-      </div>
-
       <div className="flex items-center justify-between p-6">
         <div className="flex items-center space-x-3">
           <div className="w-12 h-12 rounded-full bg-gradient-to-r from-loyalty-accent to-loyalty-gold flex items-center justify-center">
             <Crown className="w-6 h-6 text-white" />
           </div>
-          <div>
-            <h2 className="text-xl font-bold text-white">Pavan</h2>
-            <p className="text-loyalty-gold text-sm">Gold Mason</p>
+          <div className="flex items-center space-x-2">
+            <div>
+              <h2 className="text-xl font-bold text-white">Pavan</h2>
+              <p className="text-loyalty-gold text-sm">Gold Mason</p>
+            </div>
+            <div className="ml-3">
+              <h3 className="text-lg font-bold text-white tracking-wide">MYK LATICRETE</h3>
+              <p className="text-loyalty-silver text-xs">Premium Construction Solutions</p>
+            </div>
           </div>
         </div>
         <div className="flex items-center space-x-3">
