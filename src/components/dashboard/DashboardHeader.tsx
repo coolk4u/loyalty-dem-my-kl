@@ -18,15 +18,9 @@ const DashboardHeader = () => {
           <div className="w-12 h-12 rounded-full bg-gradient-to-r from-loyalty-accent to-loyalty-gold flex items-center justify-center">
             <Crown className="w-6 h-6 text-white" />
           </div>
-          <div className="flex items-center space-x-2">
-            <div>
-              <h2 className="text-xl font-bold text-white">Pavan</h2>
-              <p className="text-loyalty-gold text-sm">Gold Mason</p>
-            </div>
-            <div className="ml-3">
-              <h3 className="text-lg font-bold text-white tracking-wide">MYK LATICRETE</h3>
-              <p className="text-loyalty-silver text-xs">Premium Construction Solutions</p>
-            </div>
+          <div>
+            <h2 className="text-xl font-bold text-white">Pavan</h2>
+            <p className="text-loyalty-gold text-sm">Gold Mason</p>
           </div>
         </div>
         <div className="flex items-center space-x-3">
