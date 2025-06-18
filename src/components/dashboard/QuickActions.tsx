@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { Button } from '@/components/ui/button';
-import { QrCode, FileText } from 'lucide-react';
+import { QrCode, FileText, MapPin, Package, Users, HelpCircle } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const QuickActions = () => {
@@ -16,9 +16,31 @@ const QuickActions = () => {
           </Button>
         </Link>
         
-        <Button className="bg-orange-500 hover:bg-orange-500/90 text-white p-6 h-auto flex-col space-y-2">
-          <FileText className="w-6 h-6" />
-          <span>Take Survey</span>
+        <Link to="/survey">
+          <Button className="bg-orange-500 hover:bg-orange-500/90 text-white p-6 h-auto flex-col space-y-2 w-full">
+            <FileText className="w-6 h-6" />
+            <span>Take Survey</span>
+          </Button>
+        </Link>
+
+        <Button className="bg-purple-500 hover:bg-purple-500/90 text-white p-6 h-auto flex-col space-y-2 w-full">
+          <MapPin className="w-6 h-6" />
+          <span>Coverage</span>
+        </Button>
+
+        <Button className="bg-blue-500 hover:bg-blue-500/90 text-white p-6 h-auto flex-col space-y-2 w-full">
+          <Package className="w-6 h-6" />
+          <span>Products</span>
+        </Button>
+
+        <Button className="bg-green-500 hover:bg-green-500/90 text-white p-6 h-auto flex-col space-y-2 w-full">
+          <Users className="w-6 h-6" />
+          <span>Refer a Friend</span>
+        </Button>
+
+        <Button className="bg-indigo-500 hover:bg-indigo-500/90 text-white p-6 h-auto flex-col space-y-2 w-full">
+          <HelpCircle className="w-6 h-6" />
+          <span>Help</span>
         </Button>
       </div>
     </div>
