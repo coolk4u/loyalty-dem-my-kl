@@ -15,7 +15,7 @@ const RecentActivity = () => {
             </div>
             <div className="flex-1">
               <p className="text-white font-medium">Reward Claimed</p>
-              <p className="text-loyalty-silver text-sm">₹11,250 cashback from Asian Paints loyalty program</p>
+              <p className="text-loyalty-silver text-sm">₹2,850 cashback from MYK Laticrete tile adhesive purchase</p>
             </div>
             <span className="text-loyalty-silver text-xs">2h ago</span>
           </div>
@@ -28,7 +28,7 @@ const RecentActivity = () => {
             </div>
             <div className="flex-1">
               <p className="text-white font-medium">Survey Completed</p>
-              <p className="text-loyalty-silver text-sm">Earned 500 points from product feedback survey</p>
+              <p className="text-loyalty-silver text-sm">Earned 750 points from MYK Laticrete product feedback survey</p>
             </div>
             <span className="text-loyalty-silver text-xs">1d ago</span>
           </div>
@@ -41,7 +41,7 @@ const RecentActivity = () => {
             </div>
             <div className="flex-1">
               <p className="text-white font-medium">QR Code Scanned</p>
-              <p className="text-loyalty-silver text-sm">Earned 50 points from Birla White cement purchase</p>
+              <p className="text-loyalty-silver text-sm">Earned 100 points from MYK Laticrete grout purchase</p>
             </div>
             <span className="text-loyalty-silver text-xs">2d ago</span>
           </div>

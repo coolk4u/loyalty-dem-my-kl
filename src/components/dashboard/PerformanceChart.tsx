@@ -10,11 +10,11 @@ const PerformanceChart = () => {
         <div className="flex items-center justify-between mb-4">
           <div>
             <p className="text-loyalty-silver text-sm">Points Earned</p>
-            <p className="text-2xl font-bold text-white">1,240</p>
+            <p className="text-2xl font-bold text-white">980</p>
           </div>
           <div className="text-right">
             <p className="text-loyalty-silver text-sm">Daily Average</p>
-            <p className="text-lg font-semibold text-loyalty-accent">177</p>
+            <p className="text-lg font-semibold text-loyalty-accent">140</p>
           </div>
         </div>
         
