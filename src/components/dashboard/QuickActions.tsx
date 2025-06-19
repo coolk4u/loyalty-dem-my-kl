@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { Button } from '@/components/ui/button';
-import { QrCode, FileText, MapPin, Package, Users, HelpCircle } from 'lucide-react';
+import { QrCode, FileText, MapPin, Package, Users, HelpCircle, Gift } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const QuickActions = () => {
@@ -48,6 +48,13 @@ const QuickActions = () => {
           <HelpCircle className="w-6 h-6" />
           <span>Help</span>
         </Button>
+
+        <Link to="/rewards" className="col-span-2">
+          <Button className="bg-yellow-500 hover:bg-yellow-500/90 text-white p-6 h-auto flex-col space-y-2 w-full">
+            <Gift className="w-6 h-6" />
+            <span>Rewards</span>
+          </Button>
+        </Link>
       </div>
     </div>
   );
