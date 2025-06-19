@@ -23,10 +23,12 @@ const QuickActions = () => {
           </Button>
         </Link>
 
-        <Button className="bg-purple-500 hover:bg-purple-500/90 text-white p-6 h-auto flex-col space-y-2 w-full">
-          <MapPin className="w-6 h-6" />
-          <span>Coverage</span>
-        </Button>
+        <Link to="/coverage-calculator">
+          <Button className="bg-purple-500 hover:bg-purple-500/90 text-white p-6 h-auto flex-col space-y-2 w-full">
+            <MapPin className="w-6 h-6" />
+            <span>Coverage</span>
+          </Button>
+        </Link>
 
         <Button className="bg-blue-500 hover:bg-blue-500/90 text-white p-6 h-auto flex-col space-y-2 w-full">
           <Package className="w-6 h-6" />

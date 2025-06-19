@@ -6,6 +6,7 @@ import LoyaltyStatus from './dashboard/LoyaltyStatus';
 import QuickActions from './dashboard/QuickActions';
 import RecentActivity from './dashboard/RecentActivity';
 import PerformanceChart from './dashboard/PerformanceChart';
+import BottomSections from './dashboard/BottomSections';
 
 const InfluencerDashboard = () => {
   return (
@@ -16,6 +17,7 @@ const InfluencerDashboard = () => {
       <QuickActions />
       <RecentActivity />
       <PerformanceChart />
+      <BottomSections />
     </div>
   );
 };
