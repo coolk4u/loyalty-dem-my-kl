@@ -62,14 +62,12 @@ const BottomSections = () => {
         <h3 className="text-lg font-semibold text-white mb-4">Social Media Connect</h3>
         <div className="flex justify-center space-x-6">
           {socialMedia.map((social, index) => (
-            <Button
+            <div
               key={index}
-              variant="ghost"
-              size="icon"
-              className={`${social.color} hover:bg-white/10 w-12 h-12`}
+              className="w-16 h-16 bg-white rounded-full flex items-center justify-center shadow-lg hover:shadow-xl transition-shadow cursor-pointer"
             >
-              <social.icon className="w-6 h-6" />
-            </Button>
+              <social.icon className={`w-8 h-8 ${social.color}`} />
+            </div>
           ))}
         </div>
       </Card>

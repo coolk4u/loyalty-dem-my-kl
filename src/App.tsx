@@ -11,6 +11,7 @@ import LoyaltyDetails from "./pages/LoyaltyDetails";
 import CoverageCalculator from "./pages/CoverageCalculator";
 import Products from "./pages/Products";
 import ReferFriend from "./pages/ReferFriend";
+import Profile from "./pages/Profile";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -29,6 +30,7 @@ const App = () => (
           <Route path="/coverage-calculator" element={<CoverageCalculator />} />
           <Route path="/products" element={<Products />} />
           <Route path="/refer-friend" element={<ReferFriend />} />
+          <Route path="/profile" element={<Profile />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

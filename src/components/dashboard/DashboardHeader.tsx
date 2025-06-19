@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Crown, Bell, Settings, User } from 'lucide-react';
 import { Card } from '@/components/ui/card';
+import { Link } from 'react-router-dom';
 
 const DashboardHeader = () => {
   const [showNotification, setShowNotification] = useState(false);
@@ -53,9 +54,11 @@ const DashboardHeader = () => {
             )}
           </div>
           
-          <Button variant="ghost" size="icon" className="text-white hover:bg-white/10">
-            <User className="w-5 h-5" />
-          </Button>
+          <Link to="/profile">
+            <Button variant="ghost" size="icon" className="text-white hover:bg-white/10">
+              <User className="w-5 h-5" />
+            </Button>
+          </Link>
           
           <Button variant="ghost" size="icon" className="text-white hover:bg-white/10">
             <Settings className="w-5 h-5" />
