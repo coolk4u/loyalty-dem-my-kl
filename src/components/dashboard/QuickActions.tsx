@@ -30,15 +30,19 @@ const QuickActions = () => {
           </Button>
         </Link>
 
-        <Button className="bg-blue-500 hover:bg-blue-500/90 text-white p-6 h-auto flex-col space-y-2 w-full">
-          <Package className="w-6 h-6" />
-          <span>Products</span>
-        </Button>
+        <Link to="/products">
+          <Button className="bg-blue-500 hover:bg-blue-500/90 text-white p-6 h-auto flex-col space-y-2 w-full">
+            <Package className="w-6 h-6" />
+            <span>Products</span>
+          </Button>
+        </Link>
 
-        <Button className="bg-green-500 hover:bg-green-500/90 text-white p-6 h-auto flex-col space-y-2 w-full">
-          <Users className="w-6 h-6" />
-          <span>Refer a Friend</span>
-        </Button>
+        <Link to="/refer-friend">
+          <Button className="bg-green-500 hover:bg-green-500/90 text-white p-6 h-auto flex-col space-y-2 w-full">
+            <Users className="w-6 h-6" />
+            <span>Refer a Friend</span>
+          </Button>
+        </Link>
 
         <Button className="bg-indigo-500 hover:bg-indigo-500/90 text-white p-6 h-auto flex-col space-y-2 w-full">
           <HelpCircle className="w-6 h-6" />

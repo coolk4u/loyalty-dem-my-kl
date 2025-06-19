@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { Card } from '@/components/ui/card';
-import { FileText, Presentation, Download, Facebook, Instagram, Linkedin, Bell, Camera } from 'lucide-react';
+import { FileText, Presentation, Download, Facebook, Instagram, Linkedin, Bell, Camera, Youtube } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 const BottomSections = () => {
@@ -14,7 +14,8 @@ const BottomSections = () => {
   const socialMedia = [
     { name: 'Facebook', icon: Facebook, color: 'text-blue-500' },
     { name: 'Instagram', icon: Instagram, color: 'text-pink-500' },
-    { name: 'LinkedIn', icon: Linkedin, color: 'text-blue-600' }
+    { name: 'LinkedIn', icon: Linkedin, color: 'text-blue-600' },
+    { name: 'YouTube', icon: Youtube, color: 'text-red-500' }
   ];
 
   const notifications = [
@@ -46,11 +47,11 @@ const BottomSections = () => {
             <Button
               key={index}
               variant="outline"
-              className="border-white/20 text-white hover:bg-white/10 p-4 h-auto flex-col space-y-2"
+              className="border-white/20 bg-loyalty-navy/30 text-white hover:bg-loyalty-navy/50 hover:text-white p-4 h-auto flex-col space-y-2"
             >
-              <material.icon className="w-6 h-6" />
-              <span className="text-xs text-center">{material.name}</span>
-              <span className="text-xs text-loyalty-gold">{material.type}</span>
+              <material.icon className="w-6 h-6 text-white" />
+              <span className="text-xs text-center text-white font-medium">{material.name}</span>
+              <span className="text-xs text-loyalty-gold font-semibold">{material.type}</span>
             </Button>
           ))}
         </div>
