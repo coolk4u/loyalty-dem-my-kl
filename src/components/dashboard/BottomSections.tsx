@@ -64,9 +64,9 @@ const BottomSections = () => {
           {socialMedia.map((social, index) => (
             <div
               key={index}
-              className="w-16 h-16 bg-white rounded-full flex items-center justify-center shadow-lg hover:shadow-xl transition-shadow cursor-pointer"
+              className="w-20 h-20 bg-white rounded-lg flex items-center justify-center shadow-lg hover:shadow-xl transition-shadow cursor-pointer"
             >
-              <social.icon className={`w-8 h-8 ${social.color}`} />
+              <social.icon className={`w-10 h-10 ${social.color}`} />
             </div>
           ))}
         </div>
