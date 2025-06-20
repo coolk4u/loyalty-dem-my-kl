@@ -100,16 +100,16 @@ const Products = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-loyalty-gradient text-white">
+    <div className="min-h-screen bg-off-white text-black">
       {/* Header */}
       <div className="flex items-center justify-between p-6 pt-12">
         <div className="flex items-center space-x-3">
           <Link to="/">
-            <Button variant="ghost" size="icon" className="text-white hover:bg-white/10">
+            <Button variant="ghost" size="icon" className="text-black hover:bg-black/10">
               <ArrowLeft className="w-5 h-5" />
             </Button>
           </Link>
-          <h1 className="text-xl font-bold">MYK Laticrete Products</h1>
+          <h1 className="text-xl font-bold text-black">MYK Laticrete Products</h1>
         </div>
         <Package className="w-6 h-6 text-loyalty-accent" />
       </div>
@@ -120,24 +120,24 @@ const Products = () => {
             <Card key={product.id} className="bg-glass-gradient border-white/10 backdrop-blur-lg p-6">
               <div className="flex justify-between items-start mb-3">
                 <div className="flex-1">
-                  <h3 className="text-lg font-bold text-white mb-1">{product.name}</h3>
+                  <h3 className="text-lg font-bold text-black mb-1">{product.name}</h3>
                   <p className="text-loyalty-accent text-sm font-medium">{product.category}</p>
                 </div>
                 <div className="text-right">
                   <p className="text-loyalty-gold text-xl font-bold">{product.price}</p>
-                  <p className="text-loyalty-silver text-sm">{product.weight}</p>
+                  <p className="text-gray-700 text-sm">{product.weight}</p>
                 </div>
               </div>
               
               <div className="flex items-center space-x-1 mb-3">
                 <Star className="w-4 h-4 text-loyalty-gold fill-current" />
-                <span className="text-white font-medium">{product.rating}</span>
-                <span className="text-loyalty-silver text-sm">rating</span>
+                <span className="text-black font-medium">{product.rating}</span>
+                <span className="text-gray-700 text-sm">rating</span>
               </div>
 
               <div className="flex flex-wrap gap-2 mb-4">
                 {product.features.map((feature, index) => (
-                  <span key={index} className="bg-loyalty-navy/50 text-loyalty-silver text-xs px-2 py-1 rounded">
+                  <span key={index} className="bg-gray-200 text-gray-700 text-xs px-2 py-1 rounded">
                     {feature}
                   </span>
                 ))}

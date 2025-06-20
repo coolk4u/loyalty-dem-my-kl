@@ -42,15 +42,15 @@ const CoverageCalculator = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-loyalty-gradient text-white">
+    <div className="min-h-screen bg-off-white text-black">
       <div className="flex items-center justify-between p-6 pt-12">
         <div className="flex items-center space-x-3">
           <Link to="/">
-            <Button variant="ghost" size="icon" className="text-white hover:bg-white/10">
+            <Button variant="ghost" size="icon" className="text-black hover:bg-black/10">
               <ArrowLeft className="w-5 h-5" />
             </Button>
           </Link>
-          <h1 className="text-xl font-bold">Coverage Calculator</h1>
+          <h1 className="text-xl font-bold text-black">Coverage Calculator</h1>
         </div>
         <Calculator className="w-6 h-6 text-purple-500" />
       </div>
@@ -58,27 +58,27 @@ const CoverageCalculator = () => {
       <div className="px-6">
         {/* Calculator */}
         <Card className="bg-glass-gradient border-white/10 backdrop-blur-lg p-6 mb-6">
-          <h3 className="text-lg font-semibold text-white mb-4">Calculate Product Usage</h3>
+          <h3 className="text-lg font-semibold text-black mb-4">Calculate Product Usage</h3>
           
           <div className="space-y-4">
             <div>
-              <label className="block text-loyalty-silver text-sm mb-2">Area (sq ft)</label>
+              <label className="block text-gray-700 text-sm mb-2">Area (sq ft)</label>
               <input
                 type="number"
                 value={area}
                 onChange={(e) => setArea(e.target.value)}
-                className="w-full p-3 bg-loyalty-navy/50 border border-white/10 rounded-lg text-white"
+                className="w-full p-3 bg-white border border-gray-300 rounded-lg text-black"
                 placeholder="Enter area in square feet"
               />
             </div>
             
             <div>
-              <label className="block text-loyalty-silver text-sm mb-2">Tile Size (inches)</label>
+              <label className="block text-gray-700 text-sm mb-2">Tile Size (inches)</label>
               <input
                 type="number"
                 value={tileSize}
                 onChange={(e) => setTileSize(e.target.value)}
-                className="w-full p-3 bg-loyalty-navy/50 border border-white/10 rounded-lg text-white"
+                className="w-full p-3 bg-white border border-gray-300 rounded-lg text-black"
                 placeholder="Enter tile size"
               />
             </div>
@@ -92,12 +92,12 @@ const CoverageCalculator = () => {
           </div>
 
           {result && (
-            <div className="mt-6 p-4 bg-loyalty-navy/30 rounded-lg">
-              <h4 className="text-white font-semibold mb-2">Calculation Results</h4>
+            <div className="mt-6 p-4 bg-gray-100 rounded-lg">
+              <h4 className="text-black font-semibold mb-2">Calculation Results</h4>
               <div className="space-y-2">
-                <p className="text-loyalty-silver">Area: <span className="text-white">{result.area} sq ft</span></p>
-                <p className="text-loyalty-silver">Grout Required: <span className="text-loyalty-gold">{result.grout} kg</span></p>
-                <p className="text-loyalty-silver">Adhesive Required: <span className="text-loyalty-gold">{result.adhesive} kg</span></p>
+                <p className="text-gray-700">Area: <span className="text-black font-medium">{result.area} sq ft</span></p>
+                <p className="text-gray-700">Grout Required: <span className="text-loyalty-gold font-medium">{result.grout} kg</span></p>
+                <p className="text-gray-700">Adhesive Required: <span className="text-loyalty-gold font-medium">{result.adhesive} kg</span></p>
               </div>
             </div>
           )}
@@ -105,14 +105,14 @@ const CoverageCalculator = () => {
 
         {/* Recommended Products */}
         <Card className="bg-glass-gradient border-white/10 backdrop-blur-lg p-6 mb-6">
-          <h3 className="text-lg font-semibold text-white mb-4">Recommended Products</h3>
+          <h3 className="text-lg font-semibold text-black mb-4">Recommended Products</h3>
           <div className="space-y-4">
             {recommendedProducts.map((product, index) => (
-              <div key={index} className="p-4 bg-loyalty-navy/30 rounded-lg">
+              <div key={index} className="p-4 bg-gray-100 rounded-lg">
                 <div className="flex items-start justify-between">
                   <div className="flex-1">
-                    <h4 className="text-white font-semibold">{product.name}</h4>
-                    <p className="text-loyalty-silver text-sm mt-1">{product.description}</p>
+                    <h4 className="text-black font-semibold">{product.name}</h4>
+                    <p className="text-gray-700 text-sm mt-1">{product.description}</p>
                     <p className="text-loyalty-gold text-sm mt-2">Coverage: {product.coverage}</p>
                   </div>
                   <div className="text-right">

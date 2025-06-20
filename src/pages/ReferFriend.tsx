@@ -27,16 +27,16 @@ const ReferFriend = () => {
   };
 
   return (
-    <div className="min-h-screen bg-loyalty-gradient text-white">
+    <div className="min-h-screen bg-off-white text-black">
       {/* Header */}
       <div className="flex items-center justify-between p-6 pt-12">
         <div className="flex items-center space-x-3">
           <Link to="/">
-            <Button variant="ghost" size="icon" className="text-white hover:bg-white/10">
+            <Button variant="ghost" size="icon" className="text-black hover:bg-black/10">
               <ArrowLeft className="w-5 h-5" />
             </Button>
           </Link>
-          <h1 className="text-xl font-bold">Refer a Friend</h1>
+          <h1 className="text-xl font-bold text-black">Refer a Friend</h1>
         </div>
         <Users className="w-6 h-6 text-loyalty-accent" />
       </div>
@@ -44,26 +44,26 @@ const ReferFriend = () => {
       <div className="px-6 space-y-6">
         {/* Referral Benefits */}
         <Card className="bg-glass-gradient border-white/10 backdrop-blur-lg p-6">
-          <h3 className="text-lg font-semibold text-white mb-4">Referral Benefits</h3>
+          <h3 className="text-lg font-semibold text-black mb-4">Referral Benefits</h3>
           <div className="space-y-3">
             <div className="flex items-center space-x-3">
               <div className="w-8 h-8 bg-loyalty-gold/20 rounded-full flex items-center justify-center">
                 <span className="text-loyalty-gold font-bold">500</span>
               </div>
-              <p className="text-white">You earn 500 points for each successful referral</p>
+              <p className="text-black">You earn 500 points for each successful referral</p>
             </div>
             <div className="flex items-center space-x-3">
               <div className="w-8 h-8 bg-loyalty-accent/20 rounded-full flex items-center justify-center">
                 <span className="text-loyalty-accent font-bold">200</span>
               </div>
-              <p className="text-white">Your friend gets 200 bonus points on joining</p>
+              <p className="text-black">Your friend gets 200 bonus points on joining</p>
             </div>
           </div>
         </Card>
 
         {/* QR Code Section */}
         <Card className="bg-glass-gradient border-white/10 backdrop-blur-lg p-6">
-          <h3 className="text-lg font-semibold text-white mb-4 flex items-center space-x-2">
+          <h3 className="text-lg font-semibold text-black mb-4 flex items-center space-x-2">
             <QrCode className="w-5 h-5" />
             <span>Share QR Code</span>
           </h3>
@@ -77,8 +77,8 @@ const ReferFriend = () => {
             </div>
             
             <div className="space-y-2">
-              <p className="text-loyalty-silver text-sm">Referral Code:</p>
-              <p className="text-loyalty-gold text-xl font-bold bg-loyalty-navy/30 py-2 px-4 rounded-lg">
+              <p className="text-gray-700 text-sm">Referral Code:</p>
+              <p className="text-loyalty-gold text-xl font-bold bg-gray-100 py-2 px-4 rounded-lg">
                 {referralCode}
               </p>
             </div>
@@ -95,14 +95,14 @@ const ReferFriend = () => {
 
         {/* Manual Referral */}
         <Card className="bg-glass-gradient border-white/10 backdrop-blur-lg p-6">
-          <h3 className="text-lg font-semibold text-white mb-4 flex items-center space-x-2">
+          <h3 className="text-lg font-semibold text-black mb-4 flex items-center space-x-2">
             <Phone className="w-5 h-5" />
             <span>Add Referral by Mobile</span>
           </h3>
           
           <div className="space-y-4">
             <div>
-              <label className="block text-loyalty-silver text-sm mb-2">
+              <label className="block text-gray-700 text-sm mb-2">
                 Friend's Mobile Number
               </label>
               <input
@@ -110,7 +110,7 @@ const ReferFriend = () => {
                 value={mobileNumber}
                 onChange={(e) => setMobileNumber(e.target.value.replace(/\D/g, '').slice(0, 10))}
                 placeholder="Enter 10-digit mobile number"
-                className="w-full bg-loyalty-navy/50 border border-white/20 rounded-lg px-4 py-3 text-white placeholder-loyalty-silver focus:outline-none focus:border-loyalty-accent"
+                className="w-full bg-white border border-gray-300 rounded-lg px-4 py-3 text-black placeholder-gray-500 focus:outline-none focus:border-loyalty-accent"
                 maxLength={10}
               />
             </div>
@@ -127,26 +127,26 @@ const ReferFriend = () => {
 
         {/* Recent Referrals */}
         <Card className="bg-glass-gradient border-white/10 backdrop-blur-lg p-6">
-          <h3 className="text-lg font-semibold text-white mb-4">Recent Referrals</h3>
+          <h3 className="text-lg font-semibold text-black mb-4">Recent Referrals</h3>
           <div className="space-y-3">
-            <div className="flex justify-between items-center py-2 border-b border-white/10">
+            <div className="flex justify-between items-center py-2 border-b border-gray-200">
               <div>
-                <p className="text-white font-medium">Rahul S.</p>
-                <p className="text-loyalty-silver text-sm">Joined 2 days ago</p>
+                <p className="text-black font-medium">Rahul S.</p>
+                <p className="text-gray-700 text-sm">Joined 2 days ago</p>
               </div>
               <span className="text-loyalty-gold font-bold">+500 pts</span>
             </div>
-            <div className="flex justify-between items-center py-2 border-b border-white/10">
+            <div className="flex justify-between items-center py-2 border-b border-gray-200">
               <div>
-                <p className="text-white font-medium">Priya M.</p>
-                <p className="text-loyalty-silver text-sm">Joined 1 week ago</p>
+                <p className="text-black font-medium">Priya M.</p>
+                <p className="text-gray-700 text-sm">Joined 1 week ago</p>
               </div>
               <span className="text-loyalty-gold font-bold">+500 pts</span>
             </div>
             <div className="flex justify-between items-center py-2">
               <div>
-                <p className="text-white font-medium">Amit K.</p>
-                <p className="text-loyalty-silver text-sm">Joined 2 weeks ago</p>
+                <p className="text-black font-medium">Amit K.</p>
+                <p className="text-gray-700 text-sm">Joined 2 weeks ago</p>
               </div>
               <span className="text-loyalty-gold font-bold">+500 pts</span>
             </div>

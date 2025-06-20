@@ -75,23 +75,23 @@ const Rewards = () => {
   };
 
   return (
-    <div className="min-h-screen bg-loyalty-gradient text-white">
+    <div className="min-h-screen bg-off-white text-black">
       <div className="p-6">
         <div className="flex items-center mb-6">
           <Link to="/">
-            <Button variant="ghost" size="icon" className="text-white hover:bg-white/10 mr-3">
+            <Button variant="ghost" size="icon" className="text-black hover:bg-black/10 mr-3">
               <ArrowLeft className="w-5 h-5" />
             </Button>
           </Link>
-          <h1 className="text-2xl font-bold">Rewards</h1>
+          <h1 className="text-2xl font-bold text-black">Rewards</h1>
         </div>
 
         {/* Available Points */}
-        <Card className="bg-loyalty-navy/50 border-loyalty-accent/30 mb-6">
+        <Card className="bg-glass-gradient border-gray-200 mb-6">
           <CardContent className="p-6">
             <div className="flex items-center justify-between">
               <div>
-                <p className="text-loyalty-silver text-sm">Available Points</p>
+                <p className="text-gray-700 text-sm">Available Points</p>
                 <p className="text-3xl font-bold text-loyalty-gold">2,450</p>
               </div>
               <Star className="w-12 h-12 text-loyalty-gold" />
@@ -100,9 +100,9 @@ const Rewards = () => {
         </Card>
 
         {/* Direct Bank Transfer */}
-        <Card className="bg-loyalty-navy/50 border-loyalty-accent/30 mb-6">
+        <Card className="bg-glass-gradient border-gray-200 mb-6">
           <CardHeader>
-            <CardTitle className="text-white flex items-center">
+            <CardTitle className="text-black flex items-center">
               <CreditCard className="w-5 h-5 mr-2" />
               Direct Bank Transfer
             </CardTitle>
@@ -110,16 +110,16 @@ const Rewards = () => {
           <CardContent>
             <div className="space-y-4">
               <div>
-                <Label htmlFor="amount" className="text-loyalty-silver">Amount (₹)</Label>
+                <Label htmlFor="amount" className="text-gray-700">Amount (₹)</Label>
                 <Input
                   id="amount"
                   type="number"
                   placeholder="Enter amount (1 point = ₹1)"
                   value={transferAmount}
                   onChange={(e) => setTransferAmount(e.target.value)}
-                  className="bg-loyalty-navy border-loyalty-accent/30 text-white"
+                  className="bg-white border-gray-300 text-black"
                 />
-                <p className="text-xs text-loyalty-silver mt-1">Minimum: ₹100 | 1 Point = ₹1</p>
+                <p className="text-xs text-gray-700 mt-1">Minimum: ₹100 | 1 Point = ₹1</p>
               </div>
               <Button 
                 onClick={handleDirectTransfer}
@@ -133,13 +133,13 @@ const Rewards = () => {
 
         {/* Product Rewards */}
         <div className="mb-6">
-          <h2 className="text-xl font-semibold mb-4 flex items-center">
+          <h2 className="text-xl font-semibold text-black mb-4 flex items-center">
             <Gift className="w-5 h-5 mr-2" />
             Product Rewards
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {rewards.map((reward) => (
-              <Card key={reward.id} className="bg-loyalty-navy/50 border-loyalty-accent/30">
+              <Card key={reward.id} className="bg-glass-gradient border-gray-200">
                 <CardContent className="p-4">
                   <div className="flex space-x-4">
                     <img
@@ -148,8 +148,8 @@ const Rewards = () => {
                       className="w-20 h-20 rounded-lg object-cover"
                     />
                     <div className="flex-1">
-                      <h3 className="font-semibold text-white">{reward.name}</h3>
-                      <p className="text-sm text-loyalty-silver mb-2">{reward.description}</p>
+                      <h3 className="font-semibold text-black">{reward.name}</h3>
+                      <p className="text-sm text-gray-700 mb-2">{reward.description}</p>
                       <div className="flex items-center justify-between">
                         <span className="text-loyalty-gold font-bold">{reward.points} points</span>
                         <Button
