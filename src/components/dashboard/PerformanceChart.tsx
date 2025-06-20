@@ -5,63 +5,38 @@ import { Card } from '@/components/ui/card';
 const PerformanceChart = () => {
   return (
     <div className="px-6 pb-8">
-      <h3 className="text-xl font-bold mb-6 text-gray-900">This Week's Performance</h3>
-      <Card className="glass-card-dark border-blue-200 backdrop-blur-lg p-6 shadow-enterprise">
-        <div className="flex items-center justify-between mb-6">
-          <div className="space-y-1">
-            <p className="text-gray-600 text-sm font-medium">Points Earned</p>
-            <p className="text-3xl font-bold text-gray-900">980</p>
-            <p className="text-green-600 text-sm">↗ +12% from last week</p>
+      <h3 className="text-lg font-semibold mb-4 text-white">This Week's Activity</h3>
+      <Card className="bg-glass-gradient border-white/10 backdrop-blur-lg p-6">
+        <div className="flex items-center justify-between mb-4">
+          <div>
+            <p className="text-loyalty-silver text-sm">Points Earned</p>
+            <p className="text-2xl font-bold text-white">980</p>
           </div>
-          <div className="text-right space-y-1">
-            <p className="text-gray-600 text-sm font-medium">Daily Average</p>
-            <p className="text-xl font-bold text-enterprise-accent">140</p>
-            <p className="text-gray-500 text-sm">Target: 120</p>
+          <div className="text-right">
+            <p className="text-loyalty-silver text-sm">Daily Average</p>
+            <p className="text-lg font-semibold text-loyalty-accent">140</p>
           </div>
         </div>
         
-        {/* Modern bar chart visualization with vibrant colors */}
-        <div className="space-y-4">
-          <div className="flex items-end space-x-2 h-32 p-4 bg-gradient-to-t from-gray-100 to-transparent rounded-lg">
-            {[
-              { height: 65, color: 'bg-gradient-to-t from-blue-500 to-blue-400' },
-              { height: 78, color: 'bg-gradient-to-t from-green-500 to-green-400' },
-              { height: 52, color: 'bg-gradient-to-t from-purple-500 to-purple-400' },
-              { height: 89, color: 'bg-gradient-to-t from-orange-500 to-orange-400' },
-              { height: 95, color: 'bg-gradient-to-t from-red-500 to-red-400' },
-              { height: 73, color: 'bg-gradient-to-t from-indigo-500 to-indigo-400' },
-              { height: 84, color: 'bg-gradient-to-t from-pink-500 to-pink-400' }
-            ].map((bar, index) => (
-              <div key={index} className="flex-1 flex flex-col items-center space-y-2">
-                <div
-                  className={`w-full ${bar.color} rounded-t-md shadow-lg transition-all duration-500 hover:scale-105`}
-                  style={{ height: `${bar.height}%` }}
-                />
-              </div>
-            ))}
-          </div>
-          
-          <div className="flex justify-between text-sm text-gray-600 font-medium">
-            {['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'].map((day, index) => (
-              <span key={index} className="flex-1 text-center">{day}</span>
-            ))}
-          </div>
+        {/* Simple bar chart visualization */}
+        <div className="flex items-end space-x-2 h-24">
+          {[65, 78, 52, 89, 95, 73, 84].map((height, index) => (
+            <div
+              key={index}
+              className="flex-1 bg-gradient-to-t from-loyalty-accent to-loyalty-gold rounded-t"
+              style={{ height: `${height}%` }}
+            />
+          ))}
         </div>
         
-        {/* Performance Metrics */}
-        <div className="grid grid-cols-3 gap-4 mt-6 pt-6 border-t border-gray-200">
-          <div className="text-center">
-            <p className="text-gray-600 text-xs font-medium">Best Day</p>
-            <p className="text-gray-900 font-bold">Friday</p>
-          </div>
-          <div className="text-center">
-            <p className="text-gray-600 text-xs font-medium">Streak</p>
-            <p className="text-green-600 font-bold">7 days</p>
-          </div>
-          <div className="text-center">
-            <p className="text-gray-600 text-xs font-medium">Goal</p>
-            <p className="text-orange-600 font-bold">95%</p>
-          </div>
+        <div className="flex justify-between mt-2 text-xs text-loyalty-silver">
+          <span>Mon</span>
+          <span>Tue</span>
+          <span>Wed</span>
+          <span>Thu</span>
+          <span>Fri</span>
+          <span>Sat</span>
+          <span>Sun</span>
         </div>
       </Card>
     </div>
