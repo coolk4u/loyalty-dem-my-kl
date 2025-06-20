@@ -24,23 +24,23 @@ const QRScanner = () => {
   };
 
   return (
-    <div className="min-h-screen bg-loyalty-gradient text-white">
+    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 text-gray-900">
       {/* Header */}
       <div className="flex items-center justify-between p-6 pt-12">
         <div className="flex items-center space-x-3">
           <Link to="/">
-            <Button variant="ghost" size="icon" className="text-white hover:bg-white/10">
+            <Button variant="ghost" size="icon" className="text-gray-900 hover:bg-gray-200">
               <ArrowLeft className="w-5 h-5" />
             </Button>
           </Link>
-          <h1 className="text-xl font-bold">QR Scanner</h1>
+          <h1 className="text-xl font-bold text-gray-900">QR Scanner</h1>
         </div>
         <QrCode className="w-6 h-6 text-loyalty-accent" />
       </div>
 
       <div className="px-6">
         {/* Scanner Area */}
-        <Card className="bg-glass-gradient border-white/10 backdrop-blur-lg p-8 mb-6">
+        <Card className="bg-white border-gray-200 backdrop-blur-lg p-8 mb-6 shadow-lg">
           <div className="text-center">
             {!scanResult ? (
               <>
@@ -52,8 +52,8 @@ const QRScanner = () => {
                     </div>
                   ) : (
                     <div>
-                      <QrCode className="w-16 h-16 text-loyalty-silver mx-auto mb-2" />
-                      <p className="text-loyalty-silver">Position QR code here</p>
+                      <QrCode className="w-16 h-16 text-gray-500 mx-auto mb-2" />
+                      <p className="text-gray-500">Position QR code here</p>
                     </div>
                   )}
                   
@@ -75,15 +75,15 @@ const QRScanner = () => {
             ) : (
               <div className="space-y-4">
                 <CheckCircle className="w-16 h-16 text-green-400 mx-auto" />
-                <h3 className="text-xl font-bold text-white">Scan Successful!</h3>
-                <Card className="bg-loyalty-navy/50 border-white/10 p-4">
-                  <p className="text-loyalty-silver text-sm">Product Scanned:</p>
-                  <p className="text-white font-semibold">{scanResult}</p>
-                  <p className="text-green-400 text-sm mt-2">+100 points earned!</p>
+                <h3 className="text-xl font-bold text-gray-900">Scan Successful!</h3>
+                <Card className="bg-blue-50 border-gray-200 p-4">
+                  <p className="text-gray-600 text-sm">Product Scanned:</p>
+                  <p className="text-gray-900 font-semibold">{scanResult}</p>
+                  <p className="text-green-600 text-sm mt-2">+100 points earned!</p>
                 </Card>
                 <Button 
                   onClick={handleReset}
-                  className="bg-loyalty-royal hover:bg-loyalty-royal/90 text-white"
+                  className="bg-loyalty-navy hover:bg-loyalty-navy/90 text-white"
                 >
                   Scan Another
                 </Button>
@@ -93,9 +93,9 @@ const QRScanner = () => {
         </Card>
 
         {/* Instructions */}
-        <Card className="bg-card-gradient border-white/10 backdrop-blur-lg p-6">
-          <h3 className="text-lg font-semibold mb-3 text-white">How to Scan</h3>
-          <div className="space-y-3 text-loyalty-silver">
+        <Card className="bg-white border-gray-200 backdrop-blur-lg p-6 shadow-lg">
+          <h3 className="text-lg font-semibold mb-3 text-gray-900">How to Scan</h3>
+          <div className="space-y-3 text-gray-700">
             <div className="flex items-start space-x-3">
               <div className="w-6 h-6 rounded-full bg-loyalty-accent/20 flex items-center justify-center flex-shrink-0 mt-0.5">
                 <span className="text-loyalty-accent text-sm font-bold">1</span>

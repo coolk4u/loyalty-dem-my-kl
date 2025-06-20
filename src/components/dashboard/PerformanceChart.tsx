@@ -20,14 +20,22 @@ const PerformanceChart = () => {
           </div>
         </div>
         
-        {/* Modern bar chart visualization */}
+        {/* Modern bar chart visualization with vibrant colors */}
         <div className="space-y-4">
           <div className="flex items-end space-x-2 h-32 p-4 bg-gradient-to-t from-gray-100 to-transparent rounded-lg">
-            {[65, 78, 52, 89, 95, 73, 84].map((height, index) => (
+            {[
+              { height: 65, color: 'bg-gradient-to-t from-blue-500 to-blue-400' },
+              { height: 78, color: 'bg-gradient-to-t from-green-500 to-green-400' },
+              { height: 52, color: 'bg-gradient-to-t from-purple-500 to-purple-400' },
+              { height: 89, color: 'bg-gradient-to-t from-orange-500 to-orange-400' },
+              { height: 95, color: 'bg-gradient-to-t from-red-500 to-red-400' },
+              { height: 73, color: 'bg-gradient-to-t from-indigo-500 to-indigo-400' },
+              { height: 84, color: 'bg-gradient-to-t from-pink-500 to-pink-400' }
+            ].map((bar, index) => (
               <div key={index} className="flex-1 flex flex-col items-center space-y-2">
                 <div
-                  className="w-full bg-gradient-to-t from-enterprise-accent to-enterprise-success rounded-t-md shadow-enterprise transition-all duration-500 hover:scale-105"
-                  style={{ height: `${height}%` }}
+                  className={`w-full ${bar.color} rounded-t-md shadow-lg transition-all duration-500 hover:scale-105`}
+                  style={{ height: `${bar.height}%` }}
                 />
               </div>
             ))}
