@@ -21,9 +21,9 @@ const LoyaltyDetails = () => {
 
   const getIcon = (type: string, source: string) => {
     if (type === 'accrual') {
-      return source === 'QR Scan' ? <QrCode className="w-5 h-5 text-loyalty-accent" /> : <FileText className="w-5 h-5 text-orange-500" />;
+      return source === 'QR Scan' ? <QrCode className="w-5 h-5 text-blue-400" /> : <FileText className="w-5 h-5 text-orange-400" />;
     } else {
-      return source === 'Bank Transfer' ? <Banknote className="w-5 h-5 text-green-500" /> : <Gift className="w-5 h-5 text-purple-500" />;
+      return source === 'Bank Transfer' ? <Banknote className="w-5 h-5 text-green-400" /> : <Gift className="w-5 h-5 text-purple-400" />;
     }
   };
 
@@ -31,7 +31,7 @@ const LoyaltyDetails = () => {
   const totalRedemptions = transactions.filter(t => t.type === 'redemption').length;
 
   return (
-    <div className="min-h-screen bg-loyalty-gradient text-white">
+    <div className="min-h-screen enterprise-bg text-white">
       <div className="flex items-center justify-between p-6 pt-12">
         <div className="flex items-center space-x-3">
           <Link to="/">
@@ -39,28 +39,28 @@ const LoyaltyDetails = () => {
               <ArrowLeft className="w-5 h-5" />
             </Button>
           </Link>
-          <h1 className="text-xl font-bold">Loyalty Details</h1>
+          <h1 className="text-xl font-bold text-white">Loyalty Details</h1>
         </div>
       </div>
 
       <div className="px-6">
         {/* Summary Cards */}
         <div className="grid grid-cols-2 gap-4 mb-6">
-          <Card className="bg-glass-gradient border-white/10 backdrop-blur-lg p-4">
+          <Card className="glass-card-dark border-blue-400/20 backdrop-blur-lg p-4">
             <div className="flex items-center space-x-3">
               <TrendingUp className="w-8 h-8 text-green-400" />
               <div>
-                <p className="text-loyalty-silver text-sm">Total Accruals</p>
+                <p className="text-blue-200 text-sm">Total Accruals</p>
                 <p className="text-2xl font-bold text-white">{totalAccruals}</p>
               </div>
             </div>
           </Card>
 
-          <Card className="bg-glass-gradient border-white/10 backdrop-blur-lg p-4">
+          <Card className="glass-card-dark border-blue-400/20 backdrop-blur-lg p-4">
             <div className="flex items-center space-x-3">
               <TrendingDown className="w-8 h-8 text-red-400" />
               <div>
-                <p className="text-loyalty-silver text-sm">Total Redemptions</p>
+                <p className="text-blue-200 text-sm">Total Redemptions</p>
                 <p className="text-2xl font-bold text-white">{totalRedemptions}</p>
               </div>
             </div>
@@ -68,23 +68,23 @@ const LoyaltyDetails = () => {
         </div>
 
         {/* Transaction History */}
-        <Card className="bg-glass-gradient border-white/10 backdrop-blur-lg p-4 mb-6">
+        <Card className="glass-card-dark border-blue-400/20 backdrop-blur-lg p-4 mb-6">
           <h3 className="text-lg font-semibold text-white mb-4">Last 10 Transactions</h3>
           <div className="space-y-3">
             {transactions.map((transaction) => (
-              <div key={transaction.id} className="flex items-center justify-between p-3 bg-loyalty-navy/30 rounded-lg">
+              <div key={transaction.id} className="flex items-center justify-between p-3 bg-blue-900/30 rounded-lg border border-blue-400/10">
                 <div className="flex items-center space-x-3">
                   {getIcon(transaction.type, transaction.source)}
                   <div>
                     <p className="text-white font-medium">{transaction.description}</p>
-                    <p className="text-loyalty-silver text-sm">{transaction.date}</p>
+                    <p className="text-blue-200 text-sm">{transaction.date}</p>
                   </div>
                 </div>
                 <div className="text-right">
                   <p className={`font-semibold ${transaction.type === 'accrual' ? 'text-green-400' : 'text-red-400'}`}>
                     {transaction.type === 'accrual' ? '+' : ''}{transaction.points} pts
                   </p>
-                  <p className="text-loyalty-silver text-xs">{transaction.source}</p>
+                  <p className="text-blue-200 text-xs">{transaction.source}</p>
                 </div>
               </div>
             ))}

@@ -103,54 +103,65 @@
   }
 }
 
-/* Enterprise Theme Variables */
+/* Enterprise Blue Theme Variables */
 :root {
-  --enterprise-primary: #1e293b;
-  --enterprise-secondary: #334155;
+  --enterprise-primary: #1e3a8a;
+  --enterprise-secondary: #1e40af;
   --enterprise-accent: #3b82f6;
   --enterprise-success: #10b981;
   --enterprise-warning: #f59e0b;
   --enterprise-danger: #ef4444;
-  --enterprise-light: #f8fafc;
+  --enterprise-light: #eff6ff;
   --enterprise-dark: #0f172a;
   --enterprise-muted: #64748b;
+  --loyalty-gold: #fbbf24;
+  --loyalty-accent: #60a5fa;
+  --loyalty-silver: #cbd5e1;
+  --loyalty-navy: #1e40af;
+  --loyalty-deep-blue: #1e3a8a;
 }
 
 /* Modern Glass Morphism */
 .glass-card {
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(59, 130, 246, 0.1);
   backdrop-filter: blur(20px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(59, 130, 246, 0.2);
+  box-shadow: 0 8px 32px rgba(30, 58, 138, 0.1);
 }
 
 .glass-card-dark {
-  background: rgba(30, 41, 59, 0.8);
+  background: rgba(30, 58, 138, 0.8);
   backdrop-filter: blur(20px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(96, 165, 250, 0.2);
+  box-shadow: 0 8px 32px rgba(30, 58, 138, 0.3);
 }
 
 /* Modern Gradients */
 .gradient-primary {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, #3b82f6 0%, #1e40af 100%);
 }
 
 .gradient-secondary {
-  background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+  background: linear-gradient(135deg, #60a5fa 0%, #2563eb 100%);
 }
 
 .gradient-success {
-  background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
 }
 
 .gradient-enterprise {
-  background: linear-gradient(135deg, #1e293b 0%, #334155 50%, #475569 100%);
+  background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 50%, #3b82f6 100%);
 }
 
-/* Professional Background */
+/* Professional Blue Background */
 .enterprise-bg {
-  background: linear-gradient(135deg, #0f172a 0%, #1e293b 25%, #334155 50%, #475569 75%, #64748b 100%);
+  background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 25%, #1e40af 50%, #3b82f6 75%, #60a5fa 100%);
+  background-size: 400% 400%;
+  animation: gradient-shift 15s ease infinite;
+}
+
+.loyalty-gradient {
+  background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 25%, #1e40af 50%, #3b82f6 75%, #60a5fa 100%);
   background-size: 400% 400%;
   animation: gradient-shift 15s ease infinite;
 }
@@ -169,9 +180,18 @@
 
 /* Modern Shadows */
 .shadow-enterprise {
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1), 0 2px 4px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 4px 20px rgba(30, 58, 138, 0.15), 0 2px 4px rgba(30, 58, 138, 0.1);
 }
 
 .shadow-enterprise-lg {
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15), 0 8px 20px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 20px 60px rgba(30, 58, 138, 0.2), 0 8px 20px rgba(30, 58, 138, 0.15);
+}
+
+/* Glass gradient backgrounds */
+.bg-glass-gradient {
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.1) 0%, rgba(30, 64, 175, 0.1) 100%);
+}
+
+.bg-card-gradient {
+  background: linear-gradient(135deg, rgba(96, 165, 250, 0.1) 0%, rgba(59, 130, 246, 0.1) 100%);
 }
