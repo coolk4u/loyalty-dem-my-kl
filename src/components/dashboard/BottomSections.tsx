@@ -6,9 +6,9 @@ import { Button } from '@/components/ui/button';
 
 const BottomSections = () => {
   const marketingMaterials = [
-    { name: 'Product Catalog', icon: FileText, type: 'PDF' },
-    { name: 'Training Slides', icon: Presentation, type: 'PPT' },
-    { name: 'Usage Guide', icon: Download, type: 'PDF' }
+    { name: 'Catalog', icon: FileText, type: 'PDF' },
+    { name: 'Training', icon: Presentation, type: 'PPT' },
+    { name: 'Guide', icon: Download, type: 'PDF' }
   ];
 
   const socialMedia = [
