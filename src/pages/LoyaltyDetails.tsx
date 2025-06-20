@@ -21,9 +21,9 @@ const LoyaltyDetails = () => {
 
   const getIcon = (type: string, source: string) => {
     if (type === 'accrual') {
-      return source === 'QR Scan' ? <QrCode className="w-5 h-5 text-blue-400" /> : <FileText className="w-5 h-5 text-orange-400" />;
+      return source === 'QR Scan' ? <QrCode className="w-5 h-5 text-blue-600" /> : <FileText className="w-5 h-5 text-orange-600" />;
     } else {
-      return source === 'Bank Transfer' ? <Banknote className="w-5 h-5 text-green-400" /> : <Gift className="w-5 h-5 text-purple-400" />;
+      return source === 'Bank Transfer' ? <Banknote className="w-5 h-5 text-green-600" /> : <Gift className="w-5 h-5 text-purple-600" />;
     }
   };
 
@@ -31,60 +31,60 @@ const LoyaltyDetails = () => {
   const totalRedemptions = transactions.filter(t => t.type === 'redemption').length;
 
   return (
-    <div className="min-h-screen enterprise-bg text-white">
+    <div className="min-h-screen enterprise-bg text-gray-900">
       <div className="flex items-center justify-between p-6 pt-12">
         <div className="flex items-center space-x-3">
           <Link to="/">
-            <Button variant="ghost" size="icon" className="text-white hover:bg-white/10">
+            <Button variant="ghost" size="icon" className="text-gray-900 hover:bg-black/10">
               <ArrowLeft className="w-5 h-5" />
             </Button>
           </Link>
-          <h1 className="text-xl font-bold text-white">Loyalty Details</h1>
+          <h1 className="text-xl font-bold text-gray-900">Loyalty Details</h1>
         </div>
       </div>
 
       <div className="px-6">
         {/* Summary Cards */}
         <div className="grid grid-cols-2 gap-4 mb-6">
-          <Card className="glass-card-dark border-blue-400/20 backdrop-blur-lg p-4">
+          <Card className="glass-card-dark border-blue-200 backdrop-blur-lg p-4">
             <div className="flex items-center space-x-3">
-              <TrendingUp className="w-8 h-8 text-green-400" />
+              <TrendingUp className="w-8 h-8 text-green-600" />
               <div>
-                <p className="text-blue-200 text-sm">Total Accruals</p>
-                <p className="text-2xl font-bold text-white">{totalAccruals}</p>
+                <p className="text-gray-600 text-sm">Total Accruals</p>
+                <p className="text-2xl font-bold text-gray-900">{totalAccruals}</p>
               </div>
             </div>
           </Card>
 
-          <Card className="glass-card-dark border-blue-400/20 backdrop-blur-lg p-4">
+          <Card className="glass-card-dark border-blue-200 backdrop-blur-lg p-4">
             <div className="flex items-center space-x-3">
-              <TrendingDown className="w-8 h-8 text-red-400" />
+              <TrendingDown className="w-8 h-8 text-red-600" />
               <div>
-                <p className="text-blue-200 text-sm">Total Redemptions</p>
-                <p className="text-2xl font-bold text-white">{totalRedemptions}</p>
+                <p className="text-gray-600 text-sm">Total Redemptions</p>
+                <p className="text-2xl font-bold text-gray-900">{totalRedemptions}</p>
               </div>
             </div>
           </Card>
         </div>
 
         {/* Transaction History */}
-        <Card className="glass-card-dark border-blue-400/20 backdrop-blur-lg p-4 mb-6">
-          <h3 className="text-lg font-semibold text-white mb-4">Last 10 Transactions</h3>
+        <Card className="glass-card-dark border-blue-200 backdrop-blur-lg p-4 mb-6">
+          <h3 className="text-lg font-semibold text-gray-900 mb-4">Last 10 Transactions</h3>
           <div className="space-y-3">
             {transactions.map((transaction) => (
-              <div key={transaction.id} className="flex items-center justify-between p-3 bg-blue-900/30 rounded-lg border border-blue-400/10">
+              <div key={transaction.id} className="flex items-center justify-between p-3 bg-gray-100 rounded-lg border border-gray-200">
                 <div className="flex items-center space-x-3">
                   {getIcon(transaction.type, transaction.source)}
                   <div>
-                    <p className="text-white font-medium">{transaction.description}</p>
-                    <p className="text-blue-200 text-sm">{transaction.date}</p>
+                    <p className="text-gray-900 font-medium">{transaction.description}</p>
+                    <p className="text-gray-600 text-sm">{transaction.date}</p>
                   </div>
                 </div>
                 <div className="text-right">
-                  <p className={`font-semibold ${transaction.type === 'accrual' ? 'text-green-400' : 'text-red-400'}`}>
+                  <p className={`font-semibold ${transaction.type === 'accrual' ? 'text-green-600' : 'text-red-600'}`}>
                     {transaction.type === 'accrual' ? '+' : ''}{transaction.points} pts
                   </p>
-                  <p className="text-blue-200 text-xs">{transaction.source}</p>
+                  <p className="text-gray-600 text-xs">{transaction.source}</p>
                 </div>
               </div>
             ))}
