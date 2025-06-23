@@ -12,6 +12,10 @@ import ContractorLoyaltyDetails from "./pages/ContractorLoyaltyDetails";
 import ContractorRewards from "./pages/ContractorRewards";
 import ManageMasons from "./pages/ManageMasons";
 import CounterDashboard from "./pages/CounterDashboard";
+import CounterSalesClaim from "./pages/CounterSalesClaim";
+import CounterRedeemPoints from "./pages/CounterRedeemPoints";
+import CounterPointsBalance from "./pages/CounterPointsBalance";
+import CounterTransactionHistory from "./pages/CounterTransactionHistory";
 import QRScanner from "./pages/QRScanner";
 import Survey from "./pages/Survey";
 import LoyaltyDetails from "./pages/LoyaltyDetails";
@@ -39,6 +43,10 @@ const App = () => (
           <Route path="/contractor-rewards" element={<ContractorRewards />} />
           <Route path="/manage-masons" element={<ManageMasons />} />
           <Route path="/counter-dashboard" element={<CounterDashboard />} />
+          <Route path="/counter-sales-claim" element={<CounterSalesClaim />} />
+          <Route path="/counter-redeem-points" element={<CounterRedeemPoints />} />
+          <Route path="/counter-points-balance" element={<CounterPointsBalance />} />
+          <Route path="/counter-transaction-history" element={<CounterTransactionHistory />} />
           <Route path="/qr-scanner" element={<QRScanner />} />
           <Route path="/survey" element={<Survey />} />
           <Route path="/loyalty-details" element={<LoyaltyDetails />} />
