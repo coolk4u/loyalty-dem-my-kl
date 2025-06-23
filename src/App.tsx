@@ -4,7 +4,14 @@ import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Login from "./pages/Login";
 import Index from "./pages/Index";
+import ContractorDashboard from "./pages/ContractorDashboard";
+import ContractorQRScanner from "./pages/ContractorQRScanner";
+import ContractorLoyaltyDetails from "./pages/ContractorLoyaltyDetails";
+import ContractorRewards from "./pages/ContractorRewards";
+import ManageMasons from "./pages/ManageMasons";
+import CounterDashboard from "./pages/CounterDashboard";
 import QRScanner from "./pages/QRScanner";
 import Survey from "./pages/Survey";
 import LoyaltyDetails from "./pages/LoyaltyDetails";
@@ -24,7 +31,14 @@ const App = () => (
       <Sonner />
       <BrowserRouter>
         <Routes>
+          <Route path="/login" element={<Login />} />
           <Route path="/" element={<Index />} />
+          <Route path="/contractor-dashboard" element={<ContractorDashboard />} />
+          <Route path="/contractor-qr-scanner" element={<ContractorQRScanner />} />
+          <Route path="/contractor-loyalty-details" element={<ContractorLoyaltyDetails />} />
+          <Route path="/contractor-rewards" element={<ContractorRewards />} />
+          <Route path="/manage-masons" element={<ManageMasons />} />
+          <Route path="/counter-dashboard" element={<CounterDashboard />} />
           <Route path="/qr-scanner" element={<QRScanner />} />
           <Route path="/survey" element={<Survey />} />
           <Route path="/loyalty-details" element={<LoyaltyDetails />} />
