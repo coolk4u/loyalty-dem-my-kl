@@ -45,7 +45,7 @@ const CounterDashboard = () => {
             <UserCheck className="w-6 h-6 text-purple-600" />
           </div>
           <div>
-            <h1 className="text-2xl font-bold text-gray-900">Counter Staff Portal</h1>
+            <h1 className="text-2xl font-bold text-gray-900">Rohan</h1>
             <p className="text-gray-600">Create and manage your sales transactions</p>
           </div>
         </div>
