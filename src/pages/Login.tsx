@@ -67,9 +67,9 @@ const Login = () => {
               className={`w-full ${role.color} ${role.hoverColor} text-white p-6 h-auto justify-start space-x-4 transition-all duration-300 hover:scale-105`}
             >
               <role.icon className="w-8 h-8 flex-shrink-0" />
-              <div className="text-left">
+              <div className="text-left flex-1">
                 <div className="font-semibold text-lg">{role.title}</div>
-                <div className="text-sm opacity-90">{role.description}</div>
+                <div className="text-sm opacity-90 whitespace-normal break-words">{role.description}</div>
               </div>
             </Button>
           ))}

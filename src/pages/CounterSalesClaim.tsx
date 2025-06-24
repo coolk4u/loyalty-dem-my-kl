@@ -10,7 +10,6 @@ const CounterSalesClaim = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const [showCreateForm, setShowCreateForm] = useState(false);
   const [newClaim, setNewClaim] = useState({
-    customerName: '',
     amount: '',
     items: ['']
   });
@@ -18,7 +17,6 @@ const CounterSalesClaim = () => {
   const salesClaims = [
     {
       id: 'SC001',
-      customerName: 'Rajesh Kumar',
       amount: 2450,
       points: 245,
       date: '2024-06-23',
@@ -28,7 +26,6 @@ const CounterSalesClaim = () => {
     },
     {
       id: 'SC002',
-      customerName: 'Priya Sharma',
       amount: 1680,
       points: 168,
       date: '2024-06-23',
@@ -38,7 +35,6 @@ const CounterSalesClaim = () => {
     },
     {
       id: 'SC003',
-      customerName: 'Mohammed Ali',
       amount: 3200,
       points: 320,
       date: '2024-06-22',
@@ -75,7 +71,6 @@ const CounterSalesClaim = () => {
   };
 
   const filteredClaims = salesClaims.filter(claim =>
-    claim.customerName.toLowerCase().includes(searchTerm.toLowerCase()) ||
     claim.id.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
@@ -97,7 +92,7 @@ const CounterSalesClaim = () => {
     // Handle form submission logic here
     console.log('Submitting claim:', newClaim);
     setShowCreateForm(false);
-    setNewClaim({ customerName: '', amount: '', items: [''] });
+    setNewClaim({ amount: '', items: [''] });
   };
 
   return (
@@ -139,19 +134,6 @@ const CounterSalesClaim = () => {
             <div className="space-y-4">
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-1">
-                  Customer Name
-                </label>
-                <input
-                  type="text"
-                  value={newClaim.customerName}
-                  onChange={(e) => setNewClaim(prev => ({ ...prev, customerName: e.target.value }))}
-                  className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-                  placeholder="Enter customer name"
-                />
-              </div>
-              
-              <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1">
                   Amount (₹)
                 </label>
                 <input
@@ -165,7 +147,7 @@ const CounterSalesClaim = () => {
               
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-1">
-                  Items
+                  Items Sold
                 </label>
                 {newClaim.items.map((item, index) => (
                   <input
@@ -213,7 +195,7 @@ const CounterSalesClaim = () => {
           <Search className="w-5 h-5 absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" />
           <input
             type="text"
-            placeholder="Search by customer name or claim ID..."
+            placeholder="Search by claim ID..."
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
             className="w-full pl-10 pr-4 py-3 rounded-lg border border-gray-200 bg-white focus:outline-none focus:ring-2 focus:ring-blue-500"
@@ -231,8 +213,8 @@ const CounterSalesClaim = () => {
                   <Package className="w-5 h-5 text-blue-600" />
                 </div>
                 <div>
-                  <h3 className="font-semibold text-gray-900">{claim.customerName}</h3>
-                  <p className="text-sm text-gray-600">Claim ID: {claim.id}</p>
+                  <h3 className="font-semibold text-gray-900">Sale #{claim.id}</h3>
+                  <p className="text-sm text-gray-600">Personal Transaction</p>
                 </div>
               </div>
               <div className="flex items-center space-x-2">
@@ -249,13 +231,13 @@ const CounterSalesClaim = () => {
                 <p className="font-semibold text-gray-900">₹{claim.amount.toLocaleString()}</p>
               </div>
               <div>
-                <p className="text-sm text-gray-600">Points</p>
+                <p className="text-sm text-gray-600">Points Earned</p>
                 <p className="font-semibold text-gray-900">{claim.points}</p>
               </div>
             </div>
             
             <div className="mb-3">
-              <p className="text-sm text-gray-600 mb-1">Items</p>
+              <p className="text-sm text-gray-600 mb-1">Items Sold</p>
               <div className="space-y-1">
                 {claim.items.map((item, index) => (
                   <p key={index} className="text-sm text-gray-900">• {item}</p>
