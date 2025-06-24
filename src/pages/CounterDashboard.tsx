@@ -2,6 +2,7 @@
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel';
 import { LogOut, UserCheck, Package, Receipt, TrendingUp, IndianRupee, Star, History, Award, CreditCard, BarChart3 } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import { Link } from 'react-router-dom';
@@ -13,6 +14,27 @@ const CounterDashboard = () => {
     localStorage.removeItem('userRole');
     navigate('/login');
   };
+
+  const bannerImages = [
+    {
+      id: 1,
+      title: "MYK Laticrete Premium Products",
+      description: "High-quality construction materials for professionals",
+      image: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=800&h=400&fit=crop"
+    },
+    {
+      id: 2,
+      title: "MYK Laticrete Waterproofing Solutions",
+      description: "Advanced waterproofing technology for lasting protection",
+      image: "https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=800&h=400&fit=crop"
+    },
+    {
+      id: 3,
+      title: "MYK Laticrete Tile Adhesives",
+      description: "Professional-grade adhesives for perfect tile installation",
+      image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&h=400&fit=crop"
+    }
+  ];
 
   return (
     <div className="min-h-screen enterprise-bg text-gray-900">
@@ -94,6 +116,35 @@ const CounterDashboard = () => {
         </div>
       </div>
 
+      {/* Carousel Banner */}
+      <div className="px-6 mb-8">
+        <Carousel className="w-full">
+          <CarouselContent>
+            {bannerImages.map((banner) => (
+              <CarouselItem key={banner.id}>
+                <Card className="glass-card-dark border-gray-200 overflow-hidden">
+                  <div className="relative h-48">
+                    <img
+                      src={banner.image}
+                      alt={banner.title}
+                      className="w-full h-full object-cover"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-r from-black/60 to-transparent flex items-center">
+                      <div className="p-6 text-white">
+                        <h3 className="text-xl font-bold mb-2">{banner.title}</h3>
+                        <p className="text-sm opacity-90">{banner.description}</p>
+                      </div>
+                    </div>
+                  </div>
+                </Card>
+              </CarouselItem>
+            ))}
+          </CarouselContent>
+          <CarouselPrevious className="left-2" />
+          <CarouselNext className="right-2" />
+        </Carousel>
+      </div>
+
       {/* Sales Graph */}
       <div className="px-6 mb-8">
         <h3 className="text-xl font-bold mb-6 text-gray-900">Sales Performance - Last 3 Months</h3>
@@ -144,7 +195,7 @@ const CounterDashboard = () => {
           <Link to="/counter-redeem-points">
             <Button className="glass-card-dark hover:bg-green-500/20 border border-gray-200 text-gray-900 p-6 h-auto flex-col space-y-3 w-full transition-all duration-300 hover:scale-105">
               <Award className="w-8 h-8 text-green-600" />
-              <span className="font-semibold">Redeem Points</span>
+              <span className="font-semibold">Rewards</span>
             </Button>
           </Link>
 
