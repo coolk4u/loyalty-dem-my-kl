@@ -13,59 +13,59 @@ const CounterTransactionHistory = () => {
   const transactions = [
     {
       id: 'TXN001',
-      customerName: 'Rajesh Kumar',
-      type: 'purchase',
+      type: 'sales_claim',
       amount: 2450,
       points: 245,
       date: '2024-06-23',
       time: '14:30',
-      description: 'Cement purchase - 50kg bags'
+      description: 'MYK Laticrete Cement purchase - 50kg bags',
+      status: 'approved'
     },
     {
       id: 'TXN002',
-      customerName: 'Priya Sharma',
       type: 'redeem',
       amount: 0,
       points: -500,
       date: '2024-06-23',
       time: '12:15',
-      description: 'Redeemed discount voucher'
+      description: 'Redeemed MYK Laticrete discount voucher',
+      status: 'completed'
     },
     {
       id: 'TXN003',
-      customerName: 'Mohammed Ali',
-      type: 'purchase',
+      type: 'sales_claim',
       amount: 1680,
       points: 168,
       date: '2024-06-23',
       time: '10:45',
-      description: 'Tiles and adhesive purchase'
+      description: 'MYK Laticrete Tiles and adhesive purchase',
+      status: 'pending'
     },
     {
       id: 'TXN004',
-      customerName: 'Anita Singh',
       type: 'bonus',
       amount: 0,
       points: 100,
       date: '2024-06-22',
       time: '16:20',
-      description: 'Birthday bonus points'
+      description: 'Monthly performance bonus points',
+      status: 'completed'
     },
     {
       id: 'TXN005',
-      customerName: 'Rajesh Kumar',
       type: 'redeem',
       amount: 0,
       points: -300,
       date: '2024-06-22',
       time: '11:30',
-      description: 'Redeemed free delivery'
+      description: 'Redeemed free MYK Laticrete delivery',
+      status: 'completed'
     }
   ];
 
   const getTransactionIcon = (type: string) => {
     switch (type) {
-      case 'purchase':
+      case 'sales_claim':
         return <Package className="w-5 h-5 text-blue-600" />;
       case 'redeem':
         return <Award className="w-5 h-5 text-red-600" />;
@@ -78,12 +78,26 @@ const CounterTransactionHistory = () => {
 
   const getTransactionColor = (type: string) => {
     switch (type) {
-      case 'purchase':
+      case 'sales_claim':
         return 'text-blue-600 bg-blue-100';
       case 'redeem':
         return 'text-red-600 bg-red-100';
       case 'bonus':
         return 'text-green-600 bg-green-100';
+      default:
+        return 'text-gray-600 bg-gray-100';
+    }
+  };
+
+  const getStatusColor = (status: string) => {
+    switch (status) {
+      case 'approved':
+      case 'completed':
+        return 'text-green-600 bg-green-100';
+      case 'pending':
+        return 'text-yellow-600 bg-yellow-100';
+      case 'rejected':
+        return 'text-red-600 bg-red-100';
       default:
         return 'text-gray-600 bg-gray-100';
     }
@@ -106,8 +120,8 @@ const CounterTransactionHistory = () => {
   };
 
   const filteredTransactions = transactions.filter(transaction => {
-    const matchesSearch = transaction.customerName.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                         transaction.id.toLowerCase().includes(searchTerm.toLowerCase());
+    const matchesSearch = transaction.id.toLowerCase().includes(searchTerm.toLowerCase()) ||
+                         transaction.description.toLowerCase().includes(searchTerm.toLowerCase());
     const matchesFilter = filterType === 'all' || transaction.type === filterType;
     return matchesSearch && matchesFilter;
   });
@@ -127,8 +141,8 @@ const CounterTransactionHistory = () => {
         <div className="flex items-center space-x-3">
           <History className="w-8 h-8 text-purple-600" />
           <div>
-            <h1 className="text-2xl font-bold text-gray-900">Transaction History</h1>
-            <p className="text-gray-600">View all customer transactions and activities</p>
+            <h1 className="text-2xl font-bold text-gray-900">My Transaction History</h1>
+            <p className="text-gray-600">View all your sales and reward activities</p>
           </div>
         </div>
       </div>
@@ -139,7 +153,7 @@ const CounterTransactionHistory = () => {
           <Search className="w-5 h-5 absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" />
           <input
             type="text"
-            placeholder="Search by customer name or transaction ID..."
+            placeholder="Search by transaction ID or description..."
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
             className="w-full pl-10 pr-4 py-3 rounded-lg border border-gray-200 bg-white focus:outline-none focus:ring-2 focus:ring-blue-500"
@@ -154,7 +168,7 @@ const CounterTransactionHistory = () => {
             className="px-3 py-2 rounded-lg border border-gray-200 bg-white focus:outline-none focus:ring-2 focus:ring-blue-500"
           >
             <option value="all">All Transactions</option>
-            <option value="purchase">Purchases</option>
+            <option value="sales_claim">Sales Claims</option>
             <option value="redeem">Redemptions</option>
             <option value="bonus">Bonus Points</option>
           </select>
@@ -176,13 +190,16 @@ const CounterTransactionHistory = () => {
                   {getTransactionIcon(transaction.type)}
                 </div>
                 <div>
-                  <h3 className="font-semibold text-gray-900">{transaction.customerName}</h3>
-                  <p className="text-sm text-gray-600">{transaction.id}</p>
+                  <h3 className="font-semibold text-gray-900">{transaction.id}</h3>
+                  <p className="text-sm text-gray-600">Personal Transaction</p>
                 </div>
               </div>
-              <div className="text-right">
+              <div className="text-right flex flex-col space-y-1">
                 <span className={`px-2 py-1 rounded-full text-xs font-medium ${getTransactionColor(transaction.type)}`}>
-                  {transaction.type.charAt(0).toUpperCase() + transaction.type.slice(1)}
+                  {transaction.type.replace('_', ' ').charAt(0).toUpperCase() + transaction.type.replace('_', ' ').slice(1)}
+                </span>
+                <span className={`px-2 py-1 rounded-full text-xs font-medium ${getStatusColor(transaction.status)}`}>
+                  {transaction.status.charAt(0).toUpperCase() + transaction.status.slice(1)}
                 </span>
               </div>
             </div>
