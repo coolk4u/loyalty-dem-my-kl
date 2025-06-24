@@ -2,12 +2,18 @@
 import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
-import { ArrowLeft, Package, Search, CheckCircle, Clock, XCircle } from 'lucide-react';
+import { ArrowLeft, Package, Search, CheckCircle, Clock, XCircle, Plus } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 
 const CounterSalesClaim = () => {
   const navigate = useNavigate();
   const [searchTerm, setSearchTerm] = useState('');
+  const [showCreateForm, setShowCreateForm] = useState(false);
+  const [newClaim, setNewClaim] = useState({
+    customerName: '',
+    amount: '',
+    items: ['']
+  });
 
   const salesClaims = [
     {
@@ -17,7 +23,8 @@ const CounterSalesClaim = () => {
       points: 245,
       date: '2024-06-23',
       status: 'pending',
-      items: ['Cement - 50kg', 'Steel Rods - 10mm']
+      items: ['Cement - 50kg', 'Steel Rods - 10mm'],
+      createdBy: 'You'
     },
     {
       id: 'SC002',
@@ -26,7 +33,8 @@ const CounterSalesClaim = () => {
       points: 168,
       date: '2024-06-23',
       status: 'approved',
-      items: ['Tiles - 2x2ft', 'Adhesive - 20kg']
+      items: ['Tiles - 2x2ft', 'Adhesive - 20kg'],
+      createdBy: 'You'
     },
     {
       id: 'SC003',
@@ -35,7 +43,8 @@ const CounterSalesClaim = () => {
       points: 320,
       date: '2024-06-22',
       status: 'rejected',
-      items: ['Concrete Mix - 40kg', 'Waterproofing']
+      items: ['Concrete Mix - 40kg', 'Waterproofing'],
+      createdBy: 'You'
     }
   ];
 
@@ -70,26 +79,133 @@ const CounterSalesClaim = () => {
     claim.id.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
+  const handleAddItem = () => {
+    setNewClaim(prev => ({
+      ...prev,
+      items: [...prev.items, '']
+    }));
+  };
+
+  const handleItemChange = (index: number, value: string) => {
+    setNewClaim(prev => ({
+      ...prev,
+      items: prev.items.map((item, i) => i === index ? value : item)
+    }));
+  };
+
+  const handleSubmitClaim = () => {
+    // Handle form submission logic here
+    console.log('Submitting claim:', newClaim);
+    setShowCreateForm(false);
+    setNewClaim({ customerName: '', amount: '', items: [''] });
+  };
+
   return (
     <div className="min-h-screen enterprise-bg text-gray-900">
       {/* Header */}
-      <div className="flex items-center space-x-4 p-6 pt-12">
-        <Button 
-          variant="ghost" 
-          size="icon" 
-          onClick={() => navigate('/counter-dashboard')}
-          className="text-gray-900 hover:bg-gray-200"
-        >
-          <ArrowLeft className="w-5 h-5" />
-        </Button>
-        <div className="flex items-center space-x-3">
-          <Package className="w-8 h-8 text-blue-600" />
-          <div>
-            <h1 className="text-2xl font-bold text-gray-900">Sales Claims</h1>
-            <p className="text-gray-600">Process and manage sales claims</p>
+      <div className="flex items-center justify-between p-6 pt-12">
+        <div className="flex items-center space-x-4">
+          <Button 
+            variant="ghost" 
+            size="icon" 
+            onClick={() => navigate('/counter-dashboard')}
+            className="text-gray-900 hover:bg-gray-200"
+          >
+            <ArrowLeft className="w-5 h-5" />
+          </Button>
+          <div className="flex items-center space-x-3">
+            <Package className="w-8 h-8 text-blue-600" />
+            <div>
+              <h1 className="text-2xl font-bold text-gray-900">My Sales Claims</h1>
+              <p className="text-gray-600">Create and track your sales transactions</p>
+            </div>
           </div>
         </div>
+        <Button 
+          onClick={() => setShowCreateForm(true)}
+          className="bg-blue-500 hover:bg-blue-600 text-white"
+        >
+          <Plus className="w-4 h-4 mr-2" />
+          New Claim
+        </Button>
       </div>
+
+      {/* Create Form Modal */}
+      {showCreateForm && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50">
+          <Card className="w-full max-w-md bg-white p-6">
+            <h2 className="text-xl font-bold mb-4">Create New Sales Claim</h2>
+            
+            <div className="space-y-4">
+              <div>
+                <label className="block text-sm font-medium text-gray-700 mb-1">
+                  Customer Name
+                </label>
+                <input
+                  type="text"
+                  value={newClaim.customerName}
+                  onChange={(e) => setNewClaim(prev => ({ ...prev, customerName: e.target.value }))}
+                  className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  placeholder="Enter customer name"
+                />
+              </div>
+              
+              <div>
+                <label className="block text-sm font-medium text-gray-700 mb-1">
+                  Amount (₹)
+                </label>
+                <input
+                  type="number"
+                  value={newClaim.amount}
+                  onChange={(e) => setNewClaim(prev => ({ ...prev, amount: e.target.value }))}
+                  className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  placeholder="Enter amount"
+                />
+              </div>
+              
+              <div>
+                <label className="block text-sm font-medium text-gray-700 mb-1">
+                  Items
+                </label>
+                {newClaim.items.map((item, index) => (
+                  <input
+                    key={index}
+                    type="text"
+                    value={item}
+                    onChange={(e) => handleItemChange(index, e.target.value)}
+                    className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 mb-2"
+                    placeholder="Enter item description"
+                  />
+                ))}
+                <Button 
+                  type="button" 
+                  variant="outline" 
+                  onClick={handleAddItem}
+                  className="w-full"
+                >
+                  Add Item
+                </Button>
+              </div>
+            </div>
+            
+            <div className="flex space-x-3 mt-6">
+              <Button 
+                onClick={handleSubmitClaim}
+                className="flex-1 bg-blue-500 hover:bg-blue-600 text-white"
+              >
+                Submit Claim
+              </Button>
+              <Button 
+                variant="outline" 
+                onClick={() => setShowCreateForm(false)}
+                className="flex-1"
+              >
+                Cancel
+              </Button>
+            </div>
+          </Card>
+        </div>
+      )}
 
       {/* Search */}
       <div className="px-6 mb-6">
@@ -148,15 +264,13 @@ const CounterSalesClaim = () => {
             </div>
             
             <div className="flex items-center justify-between">
-              <p className="text-sm text-gray-600">{claim.date}</p>
+              <div>
+                <p className="text-sm text-gray-600">{claim.date}</p>
+                <p className="text-xs text-gray-500">Created by: {claim.createdBy}</p>
+              </div>
               {claim.status === 'pending' && (
-                <div className="flex space-x-2">
-                  <Button size="sm" className="bg-green-500 hover:bg-green-600 text-white">
-                    Approve
-                  </Button>
-                  <Button size="sm" variant="outline" className="border-red-200 text-red-600 hover:bg-red-50">
-                    Reject
-                  </Button>
+                <div className="text-sm text-gray-600">
+                  Awaiting manager approval
                 </div>
               )}
             </div>

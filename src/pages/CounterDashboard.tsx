@@ -2,7 +2,7 @@
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
-import { LogOut, UserCheck, Package, Receipt, TrendingUp, DollarSign, Star, History, Award, CreditCard, BarChart3 } from 'lucide-react';
+import { LogOut, UserCheck, Package, Receipt, TrendingUp, IndianRupee, Star, History, Award, CreditCard, BarChart3 } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 
@@ -24,7 +24,7 @@ const CounterDashboard = () => {
           </div>
           <div>
             <h1 className="text-2xl font-bold text-gray-900">Counter Staff Portal</h1>
-            <p className="text-gray-600">Process transactions and assist customers</p>
+            <p className="text-gray-600">Create and manage your sales transactions</p>
           </div>
         </div>
         <Button 
@@ -42,7 +42,7 @@ const CounterDashboard = () => {
         <div className="grid grid-cols-2 gap-4 mb-6">
           <Card className="glass-card-dark border-gray-200 p-4">
             <div className="flex items-center space-x-3">
-              <DollarSign className="w-8 h-8 text-green-600" />
+              <IndianRupee className="w-8 h-8 text-green-600" />
               <div>
                 <p className="text-gray-600 text-sm">Total Sales</p>
                 <p className="text-2xl font-bold text-gray-900">₹45,680</p>
@@ -58,8 +58,8 @@ const CounterDashboard = () => {
             <div className="flex items-center space-x-3">
               <Star className="w-8 h-8 text-yellow-600" />
               <div>
-                <p className="text-gray-600 text-sm">Points Earned</p>
-                <p className="text-2xl font-bold text-gray-900">2,850</p>
+                <p className="text-gray-600 text-sm">Points Balance</p>
+                <p className="text-2xl font-bold text-gray-900">2,000</p>
                 <div className="flex items-center mt-1">
                   <TrendingUp className="w-4 h-4 text-green-500 mr-1" />
                   <span className="text-green-500 text-xs">+8.7%</span>
@@ -101,7 +101,7 @@ const CounterDashboard = () => {
           <Link to="/counter-sales-claim">
             <Button className="glass-card-dark hover:bg-blue-500/20 border border-gray-200 text-gray-900 p-6 h-auto flex-col space-y-3 w-full transition-all duration-300 hover:scale-105">
               <Package className="w-8 h-8 text-blue-600" />
-              <span className="font-semibold">Sales Claim</span>
+              <span className="font-semibold">Create Sales Claim</span>
             </Button>
           </Link>
           

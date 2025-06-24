@@ -23,16 +23,16 @@ const Login = () => {
       title: 'Contractor',
       description: 'Manage masons and track team performance',
       icon: Users,
-      color: 'bg-green-500',
-      hoverColor: 'hover:bg-green-600'
+      color: 'bg-blue-500',
+      hoverColor: 'hover:bg-blue-600'
     },
     {
       id: 'counter-staff',
       title: 'Counter Staff',
       description: 'Process transactions and assist customers',
       icon: UserCheck,
-      color: 'bg-purple-500',
-      hoverColor: 'hover:bg-purple-600'
+      color: 'bg-blue-500',
+      hoverColor: 'hover:bg-blue-600'
     }
   ];
 
@@ -64,9 +64,9 @@ const Login = () => {
             <Button
               key={role.id}
               onClick={() => handleRoleSelect(role.id)}
-              className={`w-full ${role.color} ${role.hoverColor} text-white p-6 h-auto flex items-center space-x-4 transition-all duration-300 hover:scale-105`}
+              className={`w-full ${role.color} ${role.hoverColor} text-white p-6 h-auto justify-start space-x-4 transition-all duration-300 hover:scale-105`}
             >
-              <role.icon className="w-8 h-8" />
+              <role.icon className="w-8 h-8 flex-shrink-0" />
               <div className="text-left">
                 <div className="font-semibold text-lg">{role.title}</div>
                 <div className="text-sm opacity-90">{role.description}</div>
