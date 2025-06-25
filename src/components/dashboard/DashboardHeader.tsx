@@ -1,20 +1,26 @@
 
 import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
-import { Crown, Bell, Settings, User } from 'lucide-react';
+import { Crown, Bell, Settings, User, LogOut } from 'lucide-react';
 import { Card } from '@/components/ui/card';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 const DashboardHeader = () => {
   const [showNotification, setShowNotification] = useState(false);
+  const navigate = useNavigate();
 
   const handleBellClick = () => {
     setShowNotification(!showNotification);
   };
 
+  const handleLogout = () => {
+    localStorage.removeItem('userRole');
+    navigate('/login');
+  };
+
   return (
     <div className="relative">
-      <div className="flex items-center justify-between p-6">
+      <div className="flex items-center justify-between p-6 pt-12">
         <div className="flex items-center space-x-3">
           <div className="w-12 h-12 rounded-full bg-gradient-to-r from-loyalty-accent to-loyalty-gold flex items-center justify-center">
             <Crown className="w-6 h-6 text-white" />
@@ -62,6 +68,15 @@ const DashboardHeader = () => {
           
           <Button variant="ghost" size="icon" className="text-gray-900 hover:bg-black/10">
             <Settings className="w-5 h-5" />
+          </Button>
+
+          <Button 
+            variant="ghost" 
+            size="icon" 
+            onClick={handleLogout}
+            className="text-gray-900 hover:bg-black/10"
+          >
+            <LogOut className="w-5 h-5" />
           </Button>
         </div>
       </div>
