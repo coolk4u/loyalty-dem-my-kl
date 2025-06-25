@@ -7,6 +7,7 @@ import ContractorStatsOverview from './contractor/ContractorStatsOverview';
 import ContractorQuickActions from './contractor/ContractorQuickActions';
 import MasonsList from './contractor/MasonsList';
 import ContractorRecentActivity from './contractor/ContractorRecentActivity';
+import BottomNavigation from './BottomNavigation';
 
 const ContractorDashboardComponent = () => {
   const bannerImages = [
@@ -31,7 +32,7 @@ const ContractorDashboardComponent = () => {
   ];
 
   return (
-    <div className="min-h-screen enterprise-bg text-gray-900 overflow-x-hidden relative">
+    <div className="min-h-screen enterprise-bg text-gray-900 overflow-x-hidden relative pb-20">
       {/* Professional Background Pattern */}
       <div className="absolute inset-0 opacity-5">
         <div className="absolute inset-0" style={{
@@ -77,6 +78,8 @@ const ContractorDashboardComponent = () => {
         <MasonsList />
         <ContractorRecentActivity />
       </div>
+      
+      <BottomNavigation userRole="contractor" />
     </div>
   );
 };

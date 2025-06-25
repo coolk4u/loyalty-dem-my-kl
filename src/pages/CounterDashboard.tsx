@@ -6,6 +6,7 @@ import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious
 import { LogOut, UserCheck, Package, Receipt, TrendingUp, IndianRupee, Star, History, Award, CreditCard, BarChart3 } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import { Link } from 'react-router-dom';
+import BottomNavigation from '@/components/BottomNavigation';
 
 const CounterDashboard = () => {
   const navigate = useNavigate();
@@ -37,7 +38,7 @@ const CounterDashboard = () => {
   ];
 
   return (
-    <div className="min-h-screen enterprise-bg text-gray-900">
+    <div className="min-h-screen enterprise-bg text-gray-900 pb-20">
       {/* Header */}
       <div className="flex items-center justify-between p-6 pt-12">
         <div className="flex items-center space-x-4">
@@ -265,6 +266,8 @@ const CounterDashboard = () => {
           </Card>
         </div>
       </div>
+      
+      <BottomNavigation userRole="counter-staff" />
     </div>
   );
 };

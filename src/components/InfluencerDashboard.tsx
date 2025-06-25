@@ -9,6 +9,7 @@ import QuickActions from './dashboard/QuickActions';
 import RecentActivity from './dashboard/RecentActivity';
 import PerformanceChart from './dashboard/PerformanceChart';
 import BottomSections from './dashboard/BottomSections';
+import BottomNavigation from './BottomNavigation';
 
 const InfluencerDashboard = () => {
   const bannerImages = [
@@ -33,7 +34,7 @@ const InfluencerDashboard = () => {
   ];
 
   return (
-    <div className="min-h-screen enterprise-bg text-gray-900 overflow-x-hidden relative">
+    <div className="min-h-screen enterprise-bg text-gray-900 overflow-x-hidden relative pb-20">
       {/* Professional Background Pattern */}
       <div className="absolute inset-0 opacity-5">
         <div className="absolute inset-0" style={{
@@ -81,6 +82,8 @@ const InfluencerDashboard = () => {
         <PerformanceChart />
         <BottomSections />
       </div>
+      
+      <BottomNavigation userRole="mason" />
     </div>
   );
 };
