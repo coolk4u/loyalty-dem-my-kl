@@ -48,7 +48,7 @@ const DashboardHeader = () => {
             <Crown className="w-6 h-6 text-white" />
           </div>
           <div>
-            <h2 className="text-xl font-bold text-white">{firstName}</h2>
+            <h2 className="text-xl font-bold text-black">{firstName}</h2>
             <p className="text-loyalty-gold text-sm">Gold Mason</p>
           </div>
         </div>
@@ -57,7 +57,7 @@ const DashboardHeader = () => {
             <Button
               variant="ghost"
               size="icon"
-              className="text-white hover:bg-white/10 relative"
+              className="text-black hover:bg-white/10 relative"
               onClick={handleBellClick}
             >
               <Bell className="w-5 h-5" />
