@@ -5,7 +5,7 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Login from "./pages/Login";
-import Index from "./pages/Index";
+import MasonDashboard from "./pages/MasonDashboard";
 import ContractorDashboard from "./pages/ContractorDashboard";
 import ContractorQRScanner from "./pages/ContractorQRScanner";
 import ContractorLoyaltyDetails from "./pages/ContractorLoyaltyDetails";
@@ -35,8 +35,8 @@ const App = () => (
       <Sonner />
       <BrowserRouter>
         <Routes>
-          <Route path="/login" element={<Login />} />
-          <Route path="/" element={<Index />} />
+          <Route path="/" element={<Login />} />
+          <Route path="/mason-dashboard" element={<MasonDashboard />} />
           <Route path="/contractor-dashboard" element={<ContractorDashboard />} />
           <Route path="/contractor-qr-scanner" element={<ContractorQRScanner />} />
           <Route path="/contractor-loyalty-details" element={<ContractorLoyaltyDetails />} />

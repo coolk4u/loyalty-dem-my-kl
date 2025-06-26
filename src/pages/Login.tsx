@@ -42,7 +42,7 @@ const Login = () => {
     localStorage.setItem('userRole', roleId);
     
     if (roleId === 'mason') {
-      navigate('/');
+      navigate('/mason-dashboard');
     } else if (roleId === 'contractor') {
       navigate('/contractor-dashboard');
     } else if (roleId === 'counter-staff') {

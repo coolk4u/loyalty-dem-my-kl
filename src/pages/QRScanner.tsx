@@ -10,8 +10,6 @@ const QRScanner = () => {
   const [scanResult, setScanResult] = useState<string | null>(null);
   const [transactionAmount, setTransactionAmount] = useState<number | null>(null);
 
-  // const AUTH_TOKEN = 'Bearer 00Dao00001B9wPP!AQEAQAq5QMEY9X0QxvI4VBLmZ7_Z3h9xsHrMX9d4IV2_WvT_bW9tQ_iO6OHO0R5UL1_DPUxJ01ipc3hGZaV7joL4QFZEkTV8';
-
   const handleStartScan = async () => {
     setIsScanning(true);
     try {
@@ -36,21 +34,6 @@ const QRScanner = () => {
       );
       setTransactionAmount(100);
       setScanResult("MYK Laticrete Tile Adhesive - 50kg");
-
-      // GET request to fetch updated data
-      // const response = await axios.get(
-      //   "https://loyalty-d-dev-ed.develop.my.salesforce.com/services/data/v62.0/query?q=SELECT+(Select+JournalTypeId,Status,TransactionAmount+from+Transaction_Journal+ORDER+BY+CreatedDate+DESC+LIMIT+1)+FROM+LoyaltyProgramMember+WHERE+MembershipNumber='MYKL00002'",
-      //   {
-      //     headers: {
-      //       Authorization: `Bearer 00Dao00001B9wPP!AQEAQN7fgqrIFgxkG6KU0xRZIqFl4hDgx_hlM5GNr.foANr.gcGesFo8R0iAxztmjmLei3adSA9im9pwJ3fLVviOzchC53PP`, 
-      //       'Accept': '*/*',
-      //       'Content-Type': 'application/json',
-      //     },
-      //   }
-      // );
-
-      // setTransactionAmount(response.data.records[0].Transaction_Journal.records[0].TransactionAmount || 0);
-      // setScanResult("MYK Laticrete Tile Adhesive - 50kg");
     } catch (error) {
       console.error('Error:', error);
     } finally {
@@ -69,7 +52,7 @@ const QRScanner = () => {
       {/* Header */}
       <div className="flex items-center justify-between p-6 pt-12">
         <div className="flex items-center space-x-3">
-          <Link to="/">
+          <Link to="/mason-dashboard">
             <Button variant="ghost" size="icon" className="text-white hover:bg-white/10">
               <ArrowLeft className="w-5 h-5" />
             </Button>

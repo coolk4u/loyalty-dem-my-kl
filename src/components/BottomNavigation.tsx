@@ -14,7 +14,7 @@ const BottomNavigation = ({ userRole }: BottomNavProps) => {
     switch (userRole) {
       case 'mason':
         return [
-          { icon: Home, label: 'Home', path: '/' },
+          { icon: Home, label: 'Home', path: '/mason-dashboard' },
           { icon: QrCode, label: 'QR Scan', path: '/qr-scanner' },
           { icon: ClipboardList, label: 'Survey', path: '/survey' },
           { icon: Gift, label: 'Rewards', path: '/rewards' },
