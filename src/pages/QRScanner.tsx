@@ -32,7 +32,7 @@ const QRScanner = () => {
           },
         }
       );
-      setTransactionAmount(100);
+      setTransactionAmount(60);
       setScanResult("MYK Laticrete Tile Adhesive - 50kg");
     } catch (error) {
       console.error('Error:', error);
