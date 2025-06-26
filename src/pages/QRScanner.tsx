@@ -1,6 +1,5 @@
 
 import React, { useState } from 'react';
-import axios from 'axios'; 
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
 import { QrCode, ArrowLeft, Scan, CheckCircle } from 'lucide-react';
@@ -10,41 +9,18 @@ const QRScanner = () => {
   const [isScanning, setIsScanning] = useState(false);
   const [scanResult, setScanResult] = useState<string | null>(null);
 
-  const handleStartScan = async () => { 
-    setIsScanning(true); 
-    try { 
-      // POST request to create Transaction_Journal record 
-      await axios.post( 
-        'https://loyalty-d-dev-ed.develop.my.salesforce.com/services/data/v62.0/sobjects/TransactionJournal', 
-        { 
-          MemberId: '0lMao000000CR9JEAW', 
-          LoyaltyProgramId: ' 0lpao000000D64PAAS', 
-          TransactionAmount: 100, 
-          Status: 'Pending', 
-          JournalTypeId: '0lEao000000dKTVEA2', 
-          ActivityDate: new Date().toISOString(), 
-        }, 
-        { 
-          headers: { 
-            Authorization: `Bearer 00Dao00001B9wPP!AQEAQN7fgqrIFgxkG6KU0xRZIqFl4hDgx_hlM5GNr.foANr.gcGesFo8R0iAxztmjmLei3adSA9im9pwJ3fLVviOzchC53PP`,  
-            'Accept': '*/*', 
-            'Content-Type': 'application/json', 
-          }, 
-        } 
-      ); 
-      setTransactionAmount(100); 
-      setScanResult("MYK Laticrete Tile Adhesive - 50kg"); 
-    } catch (error) { 
-      console.error('Error:', error); 
-    } finally { 
-      setIsScanning(false); 
-    } 
-  }; 
+  const handleStartScan = () => {
+    setIsScanning(true);
+    // Simulate scanning process
+    setTimeout(() => {
+      setScanResult("MYK Laticrete Tile Adhesive - 50kg");
+      setIsScanning(false);
+    }, 3000);
+  };
 
   const handleReset = () => {
     setScanResult(null);
     setIsScanning(false);
-    setTransactionAmount(null);
   };
 
   return (
