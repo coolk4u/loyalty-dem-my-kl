@@ -26,7 +26,7 @@ const QRScanner = () => {
         },
         {
           headers: {
-            Authorization: `Bearer 00Dao00001B9wPP!AQEAQN7fgqrIFgxkG6KU0xRZIqFl4hDgx_hlM5GNr.foANr.gcGesFo8R0iAxztmjmLei3adSA9im9pwJ3fLVviOzchC53PP`, 
+            Authorization: `Bearer 00Dao00001B9wPP!AQEAQJurLVuhmGHw0lIUfL.CvUp8pYDLv9ymAJTWvhQ3eXumiCleXiIslZO4HOm3XEmgF_nJBMCqnIPR4HqjwQZzYcKRgcHI`, 
             'Accept': '*/*',
             'Content-Type': 'application/json',
           },
