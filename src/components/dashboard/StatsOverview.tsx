@@ -16,7 +16,7 @@ const StatsOverview = () => {
           "https://loyalty-d-dev-ed.develop.my.salesforce.com/services/data/v62.0/query?q=SELECT+Id,+Contact.FirstName,Contact.LastName,(Select+PointsBalance+from+Loyalty_Member_Currency)+FROM+LoyaltyProgramMember+WHERE+MembershipNumber='MYKL00002'",
           {
             headers: {
-              Authorization: `Bearer 00Dao00001B9wPP!AQEAQJurLVuhmGHw0lIUfL.CvUp8pYDLv9ymAJTWvhQ3eXumiCleXiIslZO4HOm3XEmgF_nJBMCqnIPR4HqjwQZzYcKRgcHI`,
+              Authorization: `Bearer 00Dao00001B9wPP!AQEAQFTKRJsFaNztIOErGR6n.vLoMzHOSq9YuNkPw8Qhlt4RBxlcEkpWGnmffJLb3p.CnXYryWWHF_501_nUJ6EOdA1M.CIc`,
               Accept: '*/*',
               'Content-Type': 'application/json',
             },
