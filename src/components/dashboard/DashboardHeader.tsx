@@ -27,7 +27,7 @@ const DashboardHeader = () => {
           "https://loyalty-d-dev-ed.develop.my.salesforce.com/services/data/v62.0/query?q=SELECT+Id,+Contact.FirstName,Contact.LastName,(Select+PointsBalance+from+Loyalty_Member_Currency)+FROM+LoyaltyProgramMember+WHERE+MembershipNumber='MYKL00002'",
           {
             headers: {
-              Authorization: `Bearer 00Dao00001B9wPP!AQEAQN7fgqrIFgxkG6KU0xRZIqFl4hDgx_hlM5GNr.foANr.gcGesFo8R0iAxztmjmLei3adSA9im9pwJ3fLVviOzchC53PP`,
+              Authorization: `Bearer 00Dao00001B9wPP!AQEAQJurLVuhmGHw0lIUfL.CvUp8pYDLv9ymAJTWvhQ3eXumiCleXiIslZO4HOm3XEmgF_nJBMCqnIPR4HqjwQZzYcKRgcHI`,
               Accept: '*/*',
               'Content-Type': 'application/json',
             },
